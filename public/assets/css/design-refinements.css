@@ -1,0 +1,129 @@
+/* IC Immobilien Gruppe — Darstellungsbereinigung, 22.10.2026.
+   Nach den bestehenden Styles laden. Inhalte und Komponenten bleiben erhalten. */
+
+/* Lange deutsche Begriffe müssen innerhalb ihrer Textspalte umbrechen können. */
+main :is(h1,h2,h3,h4){overflow-wrap:anywhere;hyphens:auto}
+main :is(.sec-head,.let-section-head,.pm-hero-layout,.let-hero-layout,
+  .cta-inner,.let-cta-inner,.intro-grid,.nl-intro-grid,.nl-leader-grid)>*{min-width:0}
+main :is(.btn,.asset-service-links a){max-width:100%;white-space:normal;overflow-wrap:anywhere}
+main :is(.contact-box,.nl-contact-card,.kd-card) a[href^="mailto:"]{overflow-wrap:anywhere}
+html{scroll-padding-top:96px}
+main [id]{scroll-margin-top:12px}
+
+/* Gemeinsames Raster der Standard-Leistungsseiten. */
+.pm-hero-layout{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr)}
+.pm-hero-copy h1{font-size:clamp(38px,5.2vw,72px);max-width:100%;line-height:1.08;text-wrap:balance}
+.pm-hero-copy h1 em{overflow-wrap:anywhere;hyphens:auto}
+.cta-inner{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr)}
+.cta h2,.letting-page .let-cta h2{font-size:clamp(32px,4vw,52px);line-height:1.13;max-width:100%;text-wrap:balance}
+.letting-page .let-section-head .section-title{max-width:100%;font-size:clamp(32px,4vw,50px);line-height:1.14}
+.letting-page .segment-intro h2{max-width:100%;font-size:clamp(30px,3vw,42px);line-height:1.16;letter-spacing:-.02em}
+.asset-page .segment-card>b{white-space:normal}
+.discipline-grid.discipline-grid--three{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+.discipline h3{font-size:clamp(23px,2.15vw,28px);line-height:1.2;hyphens:auto;overflow-wrap:anywhere}
+.discipline :is(.no,.mini){overflow-wrap:anywhere}
+.discipline .no{display:block;max-width:calc(100% - 60px);letter-spacing:.1em}
+.svc{display:flex;flex-direction:column}
+.svc .more{opacity:1;transform:none;margin-top:auto;padding-top:24px}
+.svc:focus-visible{outline:3px solid #fff;outline-offset:-6px;background:var(--ic-blue-shade)}
+
+/* Niederlassungen: dieselbe Hierarchie und derselbe Rhythmus an allen Standorten. */
+body.route-nl .nl-page .nl-hero h1{
+  font-size:clamp(38px,5.6vw,76px);line-height:1.1;max-width:100%;
+  margin:0 0 24px;white-space:nowrap;overflow-wrap:normal;word-break:normal;hyphens:none;
+}
+/* Stadtname immer als ungetrennte zweite Zeile unter „Niederlassung“. */
+body.route-nl .nl-page .nl-hero h1 em{
+  display:block;white-space:nowrap;overflow-wrap:normal;word-break:normal;hyphens:none;
+}
+body.route-nl .nl-page .nl-statement{
+  color:var(--ic-deep);font-family:var(--serif);font-weight:500;
+  font-size:clamp(32px,3.6vw,48px);line-height:1.17;letter-spacing:-.02em;
+  max-width:100%;margin:22px 0 26px;text-wrap:balance;
+}
+body.route-nl .nl-page .nl-intro p{font-size:16px;line-height:1.8}
+body.route-nl .nl-page .location-map-card p{font-size:14px;line-height:1.7;margin:20px 0 0}
+body.route-nl .nl-page .nl-leader-grid{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(32px,5vw,64px)}
+body.route-nl .nl-page .nl-leader-name{
+  font-size:clamp(34px,4vw,54px);line-height:1.12;color:var(--ic-deep);
+  letter-spacing:-.025em;margin:18px 0 20px;
+}
+body.route-nl .nl-page .nl-leader-bio{font-size:16px;line-height:1.8;color:var(--steel);margin:0 0 24px;max-width:64ch}
+body.route-nl .nl-page .sign{margin-bottom:24px}
+body.route-nl .nl-page .sign b{line-height:1.6}
+body.route-nl .nl-page .sign span{font-size:13px;line-height:1.6;letter-spacing:.04em}
+body.route-nl .nl-page .nl-leader-photo .tick.br{right:0;max-width:100%;white-space:normal;overflow-wrap:anywhere}
+
+/* Einheitliche helle Kontaktkarten, mit vorhandenen Texten und Kontaktwegen. */
+body.route-nl #nl-kontakt{background:var(--cloud);color:var(--ink);padding:76px 0}
+body.route-nl #nl-kontakt .nl-contact-card{
+  background:#fff;border:1px solid var(--line);padding:clamp(24px,3.5vw,44px);
+  color:var(--ink);min-width:0;
+}
+body.route-nl #nl-kontakt .nl-cta-box{grid-template-columns:minmax(0,1fr) minmax(240px,.65fr);align-items:center;gap:40px}
+body.route-nl #nl-kontakt .nl-feedback-contact-grid{grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:40px}
+body.route-nl #nl-kontakt :is(h3,.section-title){
+  font-family:var(--serif);font-size:clamp(30px,3.2vw,42px);font-weight:500;
+  color:var(--ic-deep);line-height:1.16;max-width:100%;margin:18px 0 22px;text-wrap:balance;
+}
+body.route-nl #nl-kontakt .eyebrow{color:var(--ic)}
+body.route-nl #nl-kontakt .eyebrow::before{background:var(--ic)}
+body.route-nl #nl-kontakt p{font-size:16px;line-height:1.8;color:var(--steel);max-width:64ch;margin:0 0 24px}
+body.route-nl #nl-kontakt .nl-cta-actions{flex-direction:column;align-items:stretch;gap:14px}
+body.route-nl #nl-kontakt .btn{justify-content:space-between;line-height:1.5}
+body.route-nl #nl-kontakt .btn-primary{background:var(--ic);color:#fff;border-color:var(--ic)}
+body.route-nl #nl-kontakt .btn-primary:hover{background:var(--ic-blue-shade)}
+body.route-nl #nl-kontakt :is(.btn-ghost,.btn-outline){background:#fff;color:var(--ic);border-color:var(--line)}
+body.route-nl #nl-kontakt :is(.btn-ghost,.btn-outline):hover{background:var(--cloud);border-color:var(--ic)}
+body.route-nl #nl-kontakt :is(address,.seo-local-contact,.nl-muenchen-contact-meta){
+  font-size:14px;line-height:1.8;color:var(--steel);border-color:var(--line);overflow-wrap:anywhere;
+}
+body.route-nl #nl-kontakt address{background:var(--soft);padding:24px;gap:18px}
+body.route-nl #nl-kontakt :is(address,.seo-local-contact) strong{color:var(--ink)}
+body.route-nl #nl-kontakt :is(address,.seo-local-contact,.nl-muenchen-contact-meta) a{color:var(--ic)}
+body.route-nl #nl-kontakt .seo-local-contact a:hover{color:var(--ic-blue-shade)}
+body.route-nl #nl-kontakt .hero-cta{margin-top:24px}
+
+/* Rechtsseiten: dieselben Schriftfamilien wie auf den übrigen Seiten. */
+body.legal-page{--serif:"Noto Serif Display",Georgia,serif;--sans:"Inter",system-ui,sans-serif;--mono:"IBM Plex Mono",ui-monospace,monospace}
+body.legal-page .main h2{font-family:var(--serif);font-weight:500;line-height:1.2;font-size:clamp(26px,3vw,36px)}
+
+/* Kleine Spalten: keine abgeschnittenen Titel oder überbreiten Schaltflächen. */
+.pf-hero-panels--five .pf-hero-panel-name{overflow-wrap:anywhere;hyphens:auto;line-height:1.16}
+.sf-col{min-width:0}
+.sf-col a{overflow-wrap:anywhere}
+@media(max-width:1000px){
+  .discipline-grid.discipline-grid--three{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  .discipline-grid.discipline-grid--three>.discipline:last-child{grid-column:1/-1}
+  body.route-nl .nl-page .nl-intro-grid{grid-template-columns:1fr;gap:36px}
+  body.route-nl .nl-page .location-map-card{position:static;max-width:600px;width:100%;justify-self:center}
+}
+@media(max-width:900px){
+  .pm-hero-layout,.cta-inner{grid-template-columns:1fr}
+  body.route-nl .nl-page .nl-leader-grid{grid-template-columns:1fr;gap:36px}
+  body.route-nl .nl-page .nl-leader-photo{max-width:460px;width:100%}
+  body.route-nl #nl-kontakt :is(.nl-cta-box,.nl-feedback-contact-grid){grid-template-columns:1fr;gap:28px}
+}
+@media(max-width:640px){
+  html{scroll-padding-top:84px}
+  main .discipline-grid,main .discipline-grid.discipline-grid--three{grid-template-columns:1fr!important}
+  .discipline-grid.discipline-grid--three>.discipline:last-child{grid-column:auto}
+  .discipline{padding:28px 24px;min-height:auto}
+  .discipline h3{margin-top:42px}
+  .pm-hero-copy h1{font-size:clamp(34px,9vw,50px)}
+  .letting-page .let-hero-copy h1{font-size:clamp(36px,10vw,56px);max-width:100%;line-height:1.08}
+  main .hero-cta{flex-direction:column;align-items:stretch}
+  main .hero-cta .btn{justify-content:space-between;width:100%}
+  body.route-nl .nl-page .nl-hero h1{font-size:clamp(26px,7.5vw,44px)}
+  body.route-nl .nl-page .nl-statement{font-size:clamp(29px,7.5vw,38px)}
+  body.route-nl #nl-kontakt{padding:56px 0}
+  .pf-hero-panels--five .pf-hero-panel-name{font-size:clamp(20px,5.5vw,27px)}
+  .pf-hero-panels--five .pf-hero-panel-meta{padding:16px}
+  .contact-email{font-size:clamp(24px,6.5vw,36px);gap:12px;max-width:100%;overflow-wrap:anywhere}
+}
+@media(max-width:380px){
+  .lcr-tab{font-size:11px;padding-right:8px;gap:4px}
+  .lcr-tab-no{width:18px;height:18px}
+  .sf-grid{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}

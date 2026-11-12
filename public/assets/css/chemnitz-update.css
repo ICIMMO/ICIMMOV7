@@ -1,0 +1,14 @@
+/* Chemnitz: Eric Uhlig feedback. No changes to shared regional styles. */
+#nl-chemnitz .nl-region-list b,#nl-chemnitz .nl-region-list small{display:block}
+#nl-chemnitz .nl-region-list b{line-height:1.5}
+#nl-chemnitz .nl-region-list small{margin-top:7px}
+#nl-chemnitz .ch-economic-regions{margin:24px 0 28px;border-top:1px solid #d7e0ea}
+#nl-chemnitz .ch-economic-regions section{padding:20px 0;border-bottom:1px solid #d7e0ea}
+#nl-chemnitz .ch-economic-regions h4{font-family:var(--serif);font-size:24px;font-weight:400;color:#073566;line-height:1.3;margin:0 0 14px}
+#nl-chemnitz .ch-economic-regions dl{margin:0}
+#nl-chemnitz .ch-economic-regions dl>div{display:grid;grid-template-columns:145px minmax(0,1fr);gap:14px;margin:0 0 10px;font-size:15px;line-height:1.6}
+#nl-chemnitz .ch-economic-regions dt{font-weight:600;color:#19334e}
+#nl-chemnitz .ch-economic-regions dd{margin:0;color:#526579}
+#nl-chemnitz .rg-tabs{gap:28px}
+@media(min-width:981px){#nl-chemnitz .rg-figure{align-self:start;position:sticky;top:92px}}
+@media(max-width:600px){#nl-chemnitz .ch-economic-regions dl>div{grid-template-columns:1fr;gap:2px;margin-bottom:14px}}

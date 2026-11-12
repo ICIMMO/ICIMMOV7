@@ -1,0 +1,33 @@
+:root{
+  --ic:#06489A;
+  --ic-dark:#053B7F;
+  --ink:#1E252D;
+  --steel:#6C7680;
+  --line:#D3D7DB;
+  --cloud:#EDEFF0;
+  --paper:#FFFFFF;
+  --maxw:920px;
+  --sans:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --serif:Georgia,"Times New Roman",serif;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.65}
+a{color:var(--ic);text-decoration:none} a:hover{text-decoration:underline}
+.header{background:var(--ic);color:#fff;padding:28px 24px}
+.header-inner,.main,.footer-inner{max-width:var(--maxw);margin:0 auto}
+.brand{display:inline-flex;align-items:center;color:#fff;text-decoration:none}
+.brand-logo{display:block;width:212px;height:auto;overflow:visible}
+.brand-logo .logo-ic,.brand-logo .logo-word{fill:#fff}
+@media(max-width:560px){.brand-logo{width:178px}}
+.main{padding:64px 24px}
+.eyebrow{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ic);font-weight:700}
+h1{font-family:var(--serif);font-weight:500;line-height:1.1;color:var(--ic);font-size:clamp(36px,6vw,62px);margin:14px 0 24px}
+h2{color:var(--ic);margin-top:38px}
+.notice{background:var(--cloud);border:1px solid var(--line);padding:22px;margin:28px 0}
+.todo{border-left:4px solid var(--ic);padding-left:18px;color:var(--steel)}
+.footer{border-top:1px solid var(--line);padding:28px 24px;color:var(--steel);font-size:14px}
+.nav{display:flex;gap:18px;flex-wrap:wrap;margin-top:22px}
+.nav a{color:#fff;text-decoration:none;border:1px solid rgba(255,255,255,.35);padding:8px 12px}
+
+/* Machine-readable/local trust data is also visible to users. */
+.seo-local-contact{max-width:1180px;margin:0 auto;padding:18px 24px 28px;font-size:14px;line-height:1.65;color:inherit;opacity:.82}.seo-local-contact a{color:inherit;text-decoration:underline;text-underline-offset:3px}

@@ -1,0 +1,160 @@
+/* IC Immobilien Gruppe — Einheitliche Struktur der Niederlassungsseiten
+   Reihenfolge auf allen Standortseiten:
+   Hero → Der Standort → Regionale Besonderheit → Leistungen am Standort → Referenzen → Niederlassungsleitung → Kontakt
+   Wird auf allen Seiten unter /niederlassungen/<standort>/ nach den übrigen Standort-Styles eingebunden. */
+
+/* ---------- Leistungen am Standort ---------- */
+.nl-standard-services .sec-head{margin-bottom:40px}
+.nl-standard-services .section-title{color:#fff;margin:18px 0 0;max-width:22ch}
+.nl-standard-services .nl-svc-grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr))}
+.nl-standard-services .nl-svc{display:flex;flex-direction:column;min-height:100%;text-decoration:none;color:#fff;padding:38px 32px}
+.nl-standard-services .nl-svc .no{display:block}
+.nl-standard-services .nl-svc h3{font-size:23px;color:#fff;margin:20px 0 14px}
+.nl-standard-services .nl-svc p{font-size:16px;line-height:1.7;color:rgba(255,255,255,.84);margin:0}
+.nl-standard-services .nl-service-link{display:block;margin-top:auto;padding-top:28px;color:#fff;font-size:14px;letter-spacing:.02em}
+.nl-standard-services .nl-svc:hover .nl-service-link{text-decoration:underline;text-underline-offset:4px}
+.nl-standard-services .nl-svc:focus-visible{outline:3px solid #fff;outline-offset:-6px}
+
+/* ---------- Referenzen (Komponente aus Frankfurt, für alle Standorte) ---------- */
+.ffm-refs .ffm-refs-head .section-title{max-width:16ch}
+.ffm-ref-media--placeholder{
+  background:
+    linear-gradient(rgba(255,255,255,.06) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.06) 1px,transparent 1px),
+    linear-gradient(150deg,#0A4C94 0%,#073566 100%);
+  background-size:44px 44px,44px 44px,auto;
+}
+.ffm-ref-ph-no{
+  position:absolute;left:50%;top:44%;transform:translate(-50%,-50%);
+  font-family:var(--serif);font-size:clamp(72px,9vw,128px);line-height:1;letter-spacing:-.04em;
+  color:rgba(255,255,255,.14);pointer-events:none;
+}
+.ffm-ref--placeholder .ffm-ref-facts dd,
+.ffm-ref--placeholder .ffm-ref-text,
+.ffm-ref--placeholder .ffm-ref-scope li{color:#8A98A8}
+
+/* ---------- Abstände zwischen Leitung und Kontakt ---------- */
+.nl-leader + .nl-cta{padding-top:0}
+
+/* ---------- Berlin: Portfolio-Kompetenz im Abschnitt „Der Standort“ ---------- */
+#nl-berlin .nl-intro .bl-portfolios-inline{margin-top:84px}
+
+/* ---------- Düsseldorf: Regionale Besonderheit ---------- */
+.nl-duesseldorf-expertise{
+  position:relative;overflow:hidden;color:#fff;
+  background:
+    radial-gradient(circle at 82% 16%,rgba(255,255,255,.08),transparent 26%),
+    linear-gradient(135deg,#05356F 0%,var(--ic-deep) 52%,#123A5E 100%);
+}
+.nl-duesseldorf-expertise::after{
+  content:"RHEIN";position:absolute;right:-1vw;bottom:-4.6vw;
+  font-family:var(--serif);font-size:clamp(110px,20vw,300px);line-height:.78;letter-spacing:-.05em;
+  color:rgba(255,255,255,.035);pointer-events:none;white-space:nowrap;
+}
+.nl-duesseldorf-expertise .grid-overlay{opacity:.16;mask-image:none}
+
+.nl-dus-graphic{
+  position:relative;min-height:700px;overflow:hidden;isolation:isolate;
+  background:
+    linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px),
+    rgba(2,42,89,.48);
+  background-size:56px 56px;
+}
+.dus-topline{
+  position:absolute;top:30px;left:32px;right:32px;z-index:12;
+  display:flex;justify-content:space-between;gap:18px;
+  font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.62);
+}
+.dus-word{
+  position:absolute;top:62px;left:28px;z-index:1;
+  font-family:var(--serif);font-size:clamp(52px,6.6vw,96px);line-height:1;letter-spacing:-.05em;
+  color:rgba(255,255,255,.08);white-space:nowrap;
+}
+.dus-map{position:absolute;inset:0;width:100%;height:100%;z-index:2;overflow:visible;pointer-events:none}
+.dus-map .river-glow{fill:none;stroke:rgba(120,184,255,.16);stroke-width:22;vector-effect:non-scaling-stroke;stroke-linecap:round}
+.dus-map .river{fill:none;stroke:rgba(255,255,255,.55);stroke-width:2.4;vector-effect:non-scaling-stroke}
+.dus-map .link{fill:none;stroke:rgba(255,255,255,.34);stroke-width:1.2;stroke-dasharray:4 6;vector-effect:non-scaling-stroke}
+.dus-river-label{
+  position:absolute;left:19%;top:50%;z-index:6;writing-mode:vertical-rl;
+  font-family:var(--mono);font-size:9px;letter-spacing:.34em;color:rgba(255,255,255,.5);
+}
+.dus-core{
+  position:absolute;left:46%;top:47%;z-index:10;width:164px;height:164px;transform:translate(-50%,-50%);
+  display:grid;place-items:center;align-content:center;text-align:center;
+  border:1px solid rgba(255,255,255,.46);background:rgba(6,72,154,.94);box-shadow:0 32px 90px rgba(0,0,0,.28);
+}
+.dus-core::before,.dus-core::after{content:"";position:absolute;width:20px;height:20px}
+.dus-core::before{top:-1px;left:-1px;border-top:2px solid #fff;border-left:2px solid #fff}
+.dus-core::after{right:-1px;bottom:-1px;border-right:2px solid #fff;border-bottom:2px solid #fff}
+.dus-core span,.dus-core small{font-family:var(--mono);text-transform:uppercase;letter-spacing:.15em;color:rgba(255,255,255,.72)}
+.dus-core span{font-size:9px}
+.dus-core strong{display:block;margin:8px 0 10px;font-family:var(--serif);font-size:54px;font-weight:500;line-height:.9;letter-spacing:-.04em;color:#fff}
+.dus-core small{font-size:8px}
+.dus-dot{
+  position:absolute;z-index:8;width:12px;height:12px;border-radius:50%;transform:translate(-50%,-50%);
+  background:#fff;box-shadow:0 0 0 6px rgba(255,255,255,.14);
+}
+.dus-dot-koeln{left:27%;top:72%}
+.dus-dot-ruhr{left:37%;top:23%}
+.dus-zone{
+  position:absolute;z-index:9;max-width:210px;padding:12px 14px;
+  border-left:2px solid rgba(255,255,255,.5);background:rgba(3,45,93,.62);backdrop-filter:blur(6px);
+}
+.dus-zone b,.dus-zone span{display:block}
+.dus-zone b{margin-bottom:4px;color:#fff;font-size:14px;font-weight:600}
+.dus-zone span{color:rgba(255,255,255,.64);font-size:11px;line-height:1.45}
+.dus-zone-ruhr{left:52%;top:15%}
+.dus-zone-koeln{left:33%;top:66%}
+.dus-metric{
+  position:absolute;z-index:9;width:150px;padding:14px 15px;
+  border:1px solid rgba(255,255,255,.26);background:rgba(3,45,93,.78);backdrop-filter:blur(8px);
+}
+.dus-metric b,.dus-metric span{display:block}
+.dus-metric b{color:#fff;font-family:var(--serif);font-size:30px;font-weight:500;line-height:1;letter-spacing:-.02em}
+.dus-metric-text b{font-size:24px}
+.dus-metric span{margin-top:8px;font-family:var(--mono);font-size:8px;line-height:1.5;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.6)}
+.dus-m1{right:6%;top:36%}
+.dus-m2{right:6%;top:54%}
+.dus-m3{left:6%;top:36%}
+.dus-caption{
+  position:absolute;left:32px;right:32px;bottom:27px;z-index:11;max-width:56ch;
+  padding-top:18px;border-top:1px solid rgba(255,255,255,.22);
+  color:rgba(255,255,255,.9);font-family:var(--serif);font-size:19px;line-height:1.4;
+}
+.nl-duesseldorf .nl-expertise-list p{color:rgba(255,255,255,.74)}
+
+@media (max-width:1050px){
+  .nl-dus-graphic{min-height:660px}
+}
+@media (max-width:700px){
+  .nl-dus-graphic{min-height:600px}
+  .dus-topline{left:20px;right:20px}
+  .dus-metric{display:none}
+  .dus-core{width:132px;height:132px}
+  .dus-core strong{font-size:44px}
+  .dus-zone{max-width:170px;padding:10px 12px}
+  .dus-zone-ruhr{left:auto;right:6%;top:16%}
+  .dus-zone-koeln{left:auto;right:6%;top:64%}
+  .dus-caption{left:20px;right:20px;font-size:17px}
+}
+@media (max-width:420px){
+  .dus-zone span{display:none}
+}
+
+/* ---------- München: Teamfoto im Abschnitt „Der Standort“ ---------- */
+.nl-muenchen .muc-team-photo{grid-column:1 / -1;margin:56px 0 0}
+.nl-muenchen .muc-team-photo img{display:block;width:100%;height:auto;aspect-ratio:1800/1055;object-fit:cover}
+.nl-muenchen .muc-team-photo figcaption{margin-top:14px;font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#4d6580}
+
+/* ---------- München: Porträtfoto statt Platzhalter ---------- */
+.nl-muenchen .nl-leader-photo .frame::before,
+.nl-muenchen .nl-leader-photo .frame::after{content:none;display:none}
+.nl-muenchen .nl-leader-photo .frame img{width:100%;height:100%;object-fit:cover;object-position:center 20%}
+.nl-muenchen .nl-leader-photo .tick{z-index:3}
+
+/* ---------- München: Betreuungsgebiet im Abschnitt „Der Standort“ ---------- */
+.nl-muenchen .muc-history-grid{align-items:start}
+.nl-muenchen .nl-region-list b,.nl-muenchen .nl-region-list small{display:block}
+.nl-muenchen .nl-region-list b{line-height:1.5}
+.nl-muenchen .nl-region-list small{margin-top:6px;line-height:1.55}

@@ -1,0 +1,14 @@
+Hero-Bild: Center Management
+Motiv: Mall of Berlin, Berlin, Deutschland
+Fotograf: Bhawin Jagad
+Quelle: https://unsplash.com/photos/people-inside-grey-metal-building-GQgnlIrMGII
+Lizenz: Unsplash License
+Lizenz-URL: https://unsplash.com/license
+Geprüft am: 27.09.2026
+
+Laut Unsplash-Lizenz kostenlos für kommerzielle und nichtkommerzielle Zwecke nutzbar; Namensnennung nicht erforderlich.
+Die Bildseite weist dieses Foto ausdrücklich als unter der Unsplash License nutzbar aus.
+Nicht zulässig sind unter anderem der unveränderte Weiterverkauf und die Zusammenstellung zu einem konkurrierenden Bilddienst.
+
+Einsatz: Symbolbild im Hero, keine Darstellung als betreutes Referenzobjekt.
+Aufbereitung: WebP in 1280 und 2560 Pixel Breite. Bildausschnitt und vorhandene blaue Überlagerung per CSS.

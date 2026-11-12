@@ -1,0 +1,57 @@
+/* Berlin: page-specific portfolio, city diagram and expertise sections. */
+#nl-berlin .nl-hero-panel .panel-item b{font-size:clamp(21px,2.1vw,28px);line-height:1.18;overflow-wrap:break-word}
+#nl-berlin .nl-region-list b,#nl-berlin .nl-region-list small{display:block}
+#nl-berlin .nl-region-list small{margin-top:5px;line-height:1.55;color:#62758a}
+#nl-berlin .nl-region-list>div>span:last-child{min-width:0;overflow-wrap:break-word}
+#nl-berlin .bl-section-head{margin-bottom:44px}
+#nl-berlin .bl-section-head h2{font:400 clamp(34px,4.2vw,54px)/1.14 var(--serif);letter-spacing:-.025em;color:#073566;margin:20px 0 0}
+#nl-berlin .bl-portfolios{background:#fff}
+#nl-berlin .bl-portfolio-columns{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);border-top:1px solid #cdd9e6}
+#nl-berlin .bl-portfolio-columns article{padding:34px 48px 0 0}
+#nl-berlin .bl-portfolio-columns article+article{border-left:1px solid #cdd9e6;padding-left:48px;padding-right:0}
+#nl-berlin .bl-overline{font:11px/1.7 var(--mono);letter-spacing:.07em;text-transform:uppercase;color:#526d89}
+#nl-berlin .bl-portfolio-columns h3{font:400 clamp(30px,3vw,42px)/1.2 var(--serif);color:#06489a;margin:16px 0}
+#nl-berlin .bl-portfolio-columns p{font-size:17px;line-height:1.8;color:#526579;max-width:52ch;margin:0}
+#nl-berlin .rg-figure{background:radial-gradient(ellipse at 95% 15%,#176ab1 0,transparent 55%),linear-gradient(150deg,#064b96,#062b52)}
+#nl-berlin .bl-city-diagram{width:100%;max-width:580px;margin:38px auto 34px}
+#nl-berlin .bl-hotspots{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px}
+#nl-berlin .bl-hotspots>div{position:relative;padding:18px 0;border-top:2px solid #96cfff}
+#nl-berlin .bl-hotspots>div::before{content:'';position:absolute;top:-5px;left:0;width:8px;height:8px;border-radius:50%;background:#fff;box-shadow:0 0 0 5px #ffffff15}
+#nl-berlin .bl-hotspots span{display:block;font:10px/1.6 var(--mono);letter-spacing:.05em;text-transform:uppercase;color:#c3def6}
+#nl-berlin .bl-hotspots strong{display:block;font-size:clamp(17px,1.7vw,23px);font-weight:500;line-height:1.3;margin:10px 0 5px;overflow-wrap:anywhere}
+#nl-berlin .bl-hotspots small{display:block;font-size:12px;line-height:1.5;color:#c3def6}
+#nl-berlin .bl-connector{position:relative;height:34px;width:54%;border:1px solid #95bde0;border-top:0;margin:0 auto 30px}
+#nl-berlin .bl-connector::after{content:'';position:absolute;top:100%;left:50%;height:30px;border-left:1px solid #95bde0}
+#nl-berlin .bl-diagram-core{text-align:center;padding:24px 12px 30px;border-top:1px solid #ffffff40;border-bottom:1px solid #ffffff40;background:#ffffff06}
+#nl-berlin .bl-diagram-core>span{display:block;font:10px/1.6 var(--mono);text-transform:uppercase;letter-spacing:.08em;color:#c3def6;margin-bottom:14px}
+#nl-berlin .bl-diagram-core strong{font:400 clamp(27px,2.8vw,38px)/1.18 var(--serif);color:#fff}
+#nl-berlin .bl-operation-path{position:relative;list-style:none;padding:0;margin:34px 0 30px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;text-align:center}
+#nl-berlin .bl-operation-path::before{content:'';position:absolute;top:16px;left:16.66%;right:16.66%;height:1px;background:#95bde0}
+#nl-berlin .bl-operation-path li{position:relative;min-width:0}
+#nl-berlin .bl-operation-path span{display:flex;justify-content:center;align-items:center;width:33px;height:33px;margin:0 auto 13px;border:1px solid #95bde0;border-radius:50%;background:#084277;color:#d6eaff;font:10px/1 var(--mono)}
+#nl-berlin .bl-operation-path strong{display:block;font-size:14px;font-weight:500;line-height:1.4}
+#nl-berlin .bl-diagram-base{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 18px;border-top:1px solid #ffffff35;padding:22px 6px 0;color:#cde5fa;font-size:12px;line-height:1.6}
+#nl-berlin .bl-expertise{background:#073566;color:#fff}
+#nl-berlin .bl-expertise .bl-section-head h2{color:#fff}
+#nl-berlin .bl-expertise-list{border-top:1px solid #ffffff35}
+#nl-berlin .bl-expertise-list article{display:grid;grid-template-columns:64px minmax(0,1fr);gap:24px;padding:30px 0;border-bottom:1px solid #ffffff35}
+#nl-berlin .bl-expertise-list article>span{font:12px/1.5 var(--mono);color:#9cccf5;padding-top:8px}
+#nl-berlin .bl-expertise-list article>div{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:40px}
+#nl-berlin .bl-expertise-list h3{font:400 clamp(25px,2.6vw,34px)/1.25 var(--serif);color:#fff;margin:0}
+#nl-berlin .bl-expertise-list p{font-size:16px;line-height:1.8;color:#d0e0ef;margin:0;max-width:64ch}
+#nl-berlin .bl-contact .section-title{max-width:26ch}
+#nl-berlin .bl-contact>p{font-size:17px;line-height:1.8;max-width:65ch;margin:24px 0 30px;color:#dce9f6}
+@media(max-width:980px){#nl-berlin .bl-city-diagram{margin-top:32px}#nl-berlin .bl-hotspots strong{font-size:23px}#nl-berlin .bl-diagram-core strong{font-size:36px}#nl-berlin .bl-expertise-list article>div{grid-template-columns:1fr;gap:14px}#nl-berlin .bl-portfolio-columns article{padding-right:28px}#nl-berlin .bl-portfolio-columns article+article{padding-left:28px}}
+@media(max-width:600px){#nl-berlin .bl-section-head{margin-bottom:30px}#nl-berlin .bl-portfolio-columns{grid-template-columns:1fr}#nl-berlin .bl-portfolio-columns article{padding:28px 0}#nl-berlin .bl-portfolio-columns article+article{padding:28px 0 0;border-left:0;border-top:1px solid #cdd9e6}#nl-berlin .bl-hotspots{gap:16px}#nl-berlin .bl-hotspots strong{font-size:18px}#nl-berlin .bl-diagram-core strong{font-size:28px}#nl-berlin .bl-operation-path strong{font-size:12px}#nl-berlin .bl-expertise-list article{grid-template-columns:26px minmax(0,1fr);gap:16px}#nl-berlin .bl-contact .section-title{font-size:34px}#nl-berlin .bl-section-head h2{font-size:35px}}
+
+/* Leadership: same portrait, biography and layout as Frankfurt. */
+#nl-berlin .nl-berlin-leader-grid{grid-template-columns:.9fr 1.2fr;align-items:start}
+#nl-berlin .nl-leader-photo .frame{aspect-ratio:3/4;background:#dce5ee}
+#nl-berlin .nl-leader-photo .frame img{object-position:center top}
+#nl-berlin .nl-leader-photo .tick.br{right:-18px;max-width:calc(100% - 20px);white-space:nowrap}
+#nl-berlin .nl-berlin-sign{margin-bottom:26px!important}
+#nl-berlin .nl-berlin-sign b{max-width:48ch;color:var(--ic-deep)}
+#nl-berlin .nl-leader-bio{max-width:66ch;margin:0 0 17px;color:var(--steel);font-size:15px;line-height:1.72}
+@media(max-width:980px){#nl-berlin .nl-berlin-leader-grid{grid-template-columns:.9fr 1.1fr;gap:48px}}
+@media(max-width:840px){#nl-berlin .nl-berlin-leader-grid{grid-template-columns:1fr}#nl-berlin .nl-leader-photo{max-width:460px}}
+@media(max-width:620px){#nl-berlin .nl-leader-photo .tick.br{right:10px;bottom:10px;white-space:normal}}

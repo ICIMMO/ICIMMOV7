@@ -1,0 +1,91 @@
+/* Startseite – Leistungen als Lebenszyklus-Grafik (ersetzt die Box-Übersicht). */
+#leistungen.lcr-section{padding:104px 0 96px}
+#leistungen.lcr-section .lc-heading{margin-bottom:56px}
+
+.lcr{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(40px,6vw,96px);align-items:center}
+
+/* --- Ring --- */
+.lcr-cycle{position:relative;width:100%;max-width:540px;aspect-ratio:1/1;justify-self:center}
+.lcr-ring{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.lcr-orbit{fill:none;stroke:rgba(255,255,255,.34);stroke-width:1;stroke-dasharray:2 6}
+.lcr-orbit-label{fill:#cfe0f3;font:500 10.5px var(--mono);letter-spacing:.2em;text-transform:uppercase}
+.lcr-track{fill:none;stroke:rgba(255,255,255,.07);stroke-width:46}
+.lcr-seg{fill:none;stroke:rgba(255,255,255,.2);stroke-width:46;cursor:pointer;transition:stroke .45s var(--ease)}
+.lcr-seg:hover{stroke:rgba(255,255,255,.34)}
+.lcr-seg.is-active{stroke:#fff}
+.lcr-chev path{fill:none;stroke:#fff;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;opacity:.75}
+.lcr-core{fill:rgba(3,40,92,.28);stroke:rgba(255,255,255,.22);stroke-width:1}
+
+.lcr-center{position:absolute;left:50%;top:50%;width:40%;transform:translate(-50%,-50%);text-align:center;pointer-events:none}
+.lcr-center strong{display:block;font-family:var(--serif);font-weight:400;font-size:clamp(22px,2.3vw,30px);line-height:1.15;color:#fff;letter-spacing:-.01em}
+.lcr-center span{display:block;margin-top:10px;font-size:12.5px;line-height:1.55;color:#cfe0f3}
+
+.lcr-tabs{position:absolute;inset:0;pointer-events:none}
+.lcr-tab{position:absolute;left:var(--x);top:var(--y);transform:translate(-50%,-50%);pointer-events:auto;display:inline-flex;align-items:center;gap:10px;padding:9px 16px 9px 9px;border:1px solid rgba(255,255,255,.45);border-radius:999px;background:#06489a;color:#fff;font:600 14px/1 var(--sans);letter-spacing:.005em;cursor:pointer;white-space:nowrap;box-shadow:0 0 0 5px #06489a,0 12px 30px rgba(0,20,55,.3);transition:background .3s var(--ease),color .3s var(--ease),border-color .3s var(--ease)}
+.lcr-tab-no{display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,.14);font:500 10.5px/1 var(--mono);letter-spacing:.04em}
+.lcr-tab:hover{border-color:#fff}
+.lcr-tab[aria-selected="true"]{background:#fff;color:#06489a;border-color:#fff}
+.lcr-tab[aria-selected="true"] .lcr-tab-no{background:#06489a;color:#fff}
+.lcr-tab:focus-visible{outline:2px solid #fff;outline-offset:4px}
+
+/* --- Detail panel --- */
+.lcr-panels{min-width:0}
+.lcr-panel{animation:lcr-in .5s var(--ease)}
+.lcr-panel[hidden]{display:none}
+.lcr:not(.is-ready) .lcr-panel + .lcr-panel{margin-top:48px}
+.lcr-step{font:500 11px var(--mono);letter-spacing:.18em;text-transform:uppercase;color:#cfe0f3;margin:0 0 14px}
+.lcr-name{font-family:var(--serif);font-weight:400;font-size:clamp(40px,4.4vw,62px);line-height:1.02;letter-spacing:-.03em;color:#fff;margin:0}
+.lcr-claim{font-size:18px;font-weight:500;color:#fff;margin:18px 0 8px}
+.lcr-intro{font-size:15.5px;line-height:1.75;color:#dce9f7;max-width:46ch;margin:0 0 30px}
+
+.lcr-services{border-top:1px solid rgba(255,255,255,.28)}
+.lcr-service{position:relative;display:block;padding:22px 48px 22px 0;border-bottom:1px solid rgba(255,255,255,.28);color:#fff;text-decoration:none;transition:padding .35s var(--ease)}
+.lcr-service h4{font-family:var(--serif);font-weight:400;font-size:24px;line-height:1.2;margin:0 0 6px;color:#fff}
+.lcr-service p{font-size:14px;line-height:1.7;color:#cddff2;margin:0;max-width:56ch}
+.lcr-go{position:absolute;right:4px;top:24px;display:grid;place-items:center;width:32px;height:32px;border:1px solid rgba(255,255,255,.45);border-radius:50%;font-size:14px;transition:background .3s var(--ease),color .3s var(--ease)}
+.lcr-service:hover{padding-left:12px}
+.lcr-service:hover .lcr-go{background:#fff;color:#06489a}
+.lcr-service:focus-visible{outline:2px solid #fff;outline-offset:4px}
+
+/* --- Über alle Phasen --- */
+.lcr-across{margin-top:80px;padding-top:36px;border-top:1px dashed rgba(255,255,255,.4);display:grid;grid-template-columns:minmax(0,1.1fr) repeat(3,minmax(0,1fr));gap:32px;align-items:start}
+.lcr-across-head h3{font-family:var(--serif);font-weight:400;font-size:28px;line-height:1.15;color:#fff;margin:0 0 10px}
+.lcr-across-head p{font-size:14px;line-height:1.7;color:#cddff2;margin:0;max-width:38ch}
+.lcr-across-mark{display:block;width:44px;height:44px;margin-bottom:18px;border-radius:50%;border:1px dashed rgba(255,255,255,.6);position:relative}
+.lcr-across-mark::after{content:"";position:absolute;inset:9px;border-radius:50%;border:6px solid rgba(255,255,255,.35)}
+.lcr-across .lcr-service{border-top:1px solid rgba(255,255,255,.28)}
+
+@keyframes lcr-in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+/* Ring baut sich beim ersten Erscheinen einmalig auf. */
+.lcr.is-ready .lcr-seg{stroke-dasharray:266 266;stroke-dashoffset:266}
+.lcr.is-ready.is-drawn .lcr-seg{stroke-dashoffset:0;transition:stroke-dashoffset 1s var(--ease),stroke .45s var(--ease)}
+.lcr.is-ready.is-drawn .lcr-seg[data-phase="2"]{transition-delay:.15s,0s}
+.lcr.is-ready.is-drawn .lcr-seg[data-phase="3"]{transition-delay:.3s,0s}
+.lcr.is-ready.is-drawn .lcr-seg[data-phase="4"]{transition-delay:.45s,0s}
+
+@media(max-width:980px){
+  .lcr{grid-template-columns:1fr;gap:48px}
+  .lcr-cycle{max-width:480px}
+  .lcr-across{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .lcr-across-head{grid-column:1 / -1}
+}
+@media(max-width:640px){
+  #leistungen.lcr-section{padding:72px 0}
+  #leistungen.lcr-section .lc-heading{margin-bottom:36px}
+  .lcr-tab{gap:6px;padding:6px 11px 6px 6px;font-size:12px}
+  .lcr-tab-no{width:20px;height:20px;font-size:9px}
+  .lcr-center{width:44%}
+  .lcr-center span{display:none}
+  .lcr-track,.lcr-seg{stroke-width:52}
+  .lcr-orbit-label{font-size:13px}
+  .lcr-across{grid-template-columns:1fr;gap:0;margin-top:56px}
+  .lcr-across-head{margin-bottom:24px}
+  .lcr-across .lcr-service+.lcr-service{border-top:0}
+  .lcr-service h4{font-size:21px}
+}
+@media(prefers-reduced-motion:reduce){
+  .lcr-panel{animation:none}
+  .lcr.is-ready .lcr-seg{stroke-dasharray:none;stroke-dashoffset:0;transition:none}
+  .lcr-service,.lcr-tab{transition:none}
+}

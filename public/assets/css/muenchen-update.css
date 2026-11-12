@@ -1,0 +1,42 @@
+/* Ramona's Munich revision: deliberately isolated from other branches. */
+.nl-muenchen .nl-kicker{gap:10px;flex-wrap:wrap}
+.nl-muenchen .nl-kicker .nl-pill{font-size:12px;line-height:1.5;letter-spacing:.055em;white-space:normal}
+.nl-muenchen .nl-hero h1{overflow-wrap:anywhere}
+.nl-muenchen .nl-muenchen-panel-grid .panel-item b{font-size:clamp(25px,2.7vw,35px);line-height:1.15}
+.nl-muenchen .nl-muenchen-panel-grid .panel-item:last-child b{font-size:clamp(20px,2.1vw,27px);overflow-wrap:anywhere}
+.nl-muenchen .nl-muenchen-panel-grid .panel-item span{font-family:var(--sans);font-size:14px;line-height:1.55;letter-spacing:0;text-transform:none;color:#e1ecf8;display:block}
+.nl-muenchen .muc-history-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:center}
+.nl-muenchen .muc-history h2{font-family:var(--serif);font-size:clamp(33px,4vw,49px);line-height:1.16;color:var(--ic-deep);margin:20px 0 24px;max-width:21ch}
+.nl-muenchen .muc-history p{font-size:16px;line-height:1.8}
+
+.nl-muenchen .muc-history-visual{padding:36px;background:#eef3f8;border-top:3px solid var(--ic);min-width:0}
+.nl-muenchen .muc-history-overline{font-family:var(--mono);font-size:12px;line-height:1.6;letter-spacing:.065em;color:#4d6580;text-transform:uppercase}
+.nl-muenchen .muc-timeline{list-style:none;margin:30px 0 0;padding:0 0 0 22px;border-left:1px solid #a7c1db}
+.nl-muenchen .muc-timeline li{position:relative;padding:0 0 36px 8px}
+.nl-muenchen .muc-timeline li:last-child{padding-bottom:0}
+.nl-muenchen .muc-timeline-dot{position:absolute;width:11px;height:11px;left:-28px;top:7px;background:var(--ic);border-radius:50%;box-shadow:0 0 0 6px #eef3f8}
+.nl-muenchen .muc-timeline-date{font-family:var(--mono);font-size:12px;line-height:1.5;letter-spacing:.03em;color:#4d6580}
+.nl-muenchen .muc-timeline-date strong{font-family:var(--serif);font-size:56px;font-weight:400;line-height:1;color:var(--ic);display:block;margin:8px 0 14px}
+.nl-muenchen .muc-timeline h3{font-family:var(--serif);font-size:27px;line-height:1.2;color:var(--ic);margin:12px 0}
+.nl-muenchen .muc-timeline p{font-size:15px;line-height:1.7;color:#526579;margin:0}
+.nl-muenchen .muc-competence{position:relative;overflow:hidden;color:#fff;background:linear-gradient(120deg,#053467,#06489a)}
+.nl-muenchen .muc-competence-inner{position:relative;z-index:2}
+.nl-muenchen .muc-competence-head{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:end;margin-bottom:44px}
+.nl-muenchen .muc-competence-head h2{font-family:var(--serif);font-size:clamp(34px,4vw,49px);line-height:1.15;font-weight:400;margin:20px 0 0;color:#fff}
+.nl-muenchen .muc-competence-head p{font-size:17px;line-height:1.8;color:#deebf9;margin:0}
+.nl-muenchen .muc-competence-grid{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid #ffffff50}
+.nl-muenchen .muc-discipline{padding:36px 40px 0 0;min-width:0}
+.nl-muenchen .muc-discipline+ .muc-discipline{padding:36px 0 0 40px;border-left:1px solid #ffffff35}
+.nl-muenchen .muc-discipline-label{font-family:var(--mono);font-size:12px;line-height:1.5;letter-spacing:.06em;text-transform:uppercase;color:#bfd9f4}
+.nl-muenchen .muc-discipline h3{font-family:var(--serif);font-size:34px;line-height:1.2;font-weight:400;color:white;margin:18px 0}
+.nl-muenchen .muc-discipline p,.nl-muenchen .muc-discipline li{font-size:16px;line-height:1.75;color:#deebf9}
+.nl-muenchen .muc-discipline ul{padding-left:18px;margin:24px 0 30px}
+.nl-muenchen .muc-discipline li{margin:0 0 9px}
+.nl-muenchen .muc-discipline a{display:flex;align-items:center;justify-content:space-between;gap:20px;border-top:1px solid #ffffff40;padding-top:20px;font-size:14px;font-weight:600;line-height:1.6;color:white}
+.nl-muenchen .muc-discipline a span{font-size:26px;transition:transform .2s}
+.nl-muenchen .muc-discipline a:hover span{transform:translate(3px,-3px)}
+.nl-muenchen .muc-discipline a:focus-visible{outline:2px solid white;outline-offset:5px}
+.nl-muenchen .nl-muenchen-contact-meta a{font-size:14px;overflow-wrap:anywhere;text-decoration:underline;text-underline-offset:3px}
+@media(max-width:900px){.nl-muenchen .muc-history-grid,.nl-muenchen .muc-competence-head{grid-template-columns:1fr;gap:30px}.nl-muenchen .muc-history h2{max-width:25ch}.nl-muenchen .muc-history-visual{max-width:640px;width:100%}.nl-muenchen .muc-discipline{padding-right:24px}.nl-muenchen .muc-discipline+.muc-discipline{padding-left:24px}}
+@media(max-width:600px){.nl-muenchen .muc-competence-grid{grid-template-columns:1fr}.nl-muenchen .muc-discipline,.nl-muenchen .muc-discipline+.muc-discipline{padding:28px 0 0;border-left:0}.nl-muenchen .muc-discipline+.muc-discipline{margin-top:30px;border-top:1px solid #ffffff40}.nl-muenchen .muc-history-visual{padding:26px 22px}.nl-muenchen .muc-discipline h3{font-size:30px}.nl-muenchen .hero-cta .btn{white-space:normal;line-height:1.5}.nl-muenchen .nl-kicker .nl-pill{font-size:12px}.nl-muenchen .nl-muenchen-panel-grid .panel-item b{font-size:28px}}
+@media(prefers-reduced-motion:reduce){.nl-muenchen .muc-discipline a span{transition:none}}

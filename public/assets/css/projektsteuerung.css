@@ -1,0 +1,509 @@
+/* =========================================================
+   Projektsteuerung / Project Management page enhancements
+   Scoped to #leistung-projektsteuerung
+   ========================================================= */
+
+#leistung-projektsteuerung .pm-service-hero .hero-bg::after{
+  background:
+    linear-gradient(180deg,rgba(6,72,154,.60) 0%,rgba(6,72,154,.40) 45%,rgba(6,72,154,.94) 100%),
+    linear-gradient(90deg,rgba(6,72,154,.84) 0%,rgba(6,72,154,.36) 54%,rgba(6,72,154,.62) 100%);
+}
+
+#leistung-projektsteuerung .pm-hero-copy h1{
+  max-width:12ch;
+}
+
+#leistung-projektsteuerung .pm-letters-grid{
+  margin-top:0;
+}
+
+#leistung-projektsteuerung .scope-card h3{
+  max-width:12ch;
+}
+
+#leistung-projektsteuerung .pm-cockpit{
+  background:linear-gradient(180deg,#F6F7F8 0%, #FFFFFF 100%);
+  overflow:hidden;
+}
+
+#leistung-projektsteuerung .cockpit-layout{
+  display:grid;
+  grid-template-columns:.9fr 1.1fr;
+  gap:54px;
+  align-items:center;
+}
+
+#leistung-projektsteuerung .cockpit-points{
+  display:grid;
+  gap:16px;
+}
+
+#leistung-projektsteuerung .cockpit-points article{
+  display:grid;
+  grid-template-columns:68px 1fr;
+  gap:18px;
+  background:#fff;
+  border:1px solid var(--line);
+  padding:24px;
+  transition:.35s var(--ease);
+}
+
+#leistung-projektsteuerung .cockpit-points article:hover{
+  transform:translateY(-3px);
+  box-shadow:0 18px 45px rgba(6,72,154,.10);
+}
+
+#leistung-projektsteuerung .cockpit-points .num{
+  font-family:var(--serif);
+  font-size:38px;
+  line-height:1;
+  color:var(--ic-deep);
+}
+
+#leistung-projektsteuerung .cockpit-points h3{
+  font-size:22px;
+  color:var(--ic-deep);
+  margin-bottom:6px;
+}
+
+#leistung-projektsteuerung .cockpit-points p{
+  font-size:14px;
+  color:var(--steel);
+  margin:0;
+}
+
+#leistung-projektsteuerung .cockpit-visual{
+  position:relative;
+  min-height:720px;
+  border:1px solid var(--line);
+  padding:46px 40px 34px;
+  display:grid;
+  grid-template-columns:minmax(150px,1fr) 190px minmax(150px,1fr);
+  grid-template-rows:auto 210px auto auto;
+  grid-template-areas:
+    ". top ."
+    "left core right"
+    ". bottom ."
+    "tools tools tools";
+  gap:30px 34px;
+  align-items:center;
+  justify-items:stretch;
+  background:
+    linear-gradient(180deg, rgba(6,72,154,.02), rgba(6,72,154,.08)),
+    #fff;
+  overflow:hidden;
+}
+
+#leistung-projektsteuerung .cockpit-visual::before,
+#leistung-projektsteuerung .cockpit-visual::after{
+  content:none;
+}
+
+#leistung-projektsteuerung .cockpit-core{
+  grid-area:core;
+  position:relative;
+  width:190px;
+  height:190px;
+  border-radius:50%;
+  background:var(--ic-deep);
+  color:#fff;
+  display:grid;
+  place-items:center;
+  justify-self:center;
+  text-align:center;
+  font-family:var(--serif);
+  font-size:23px;
+  line-height:1.05;
+  letter-spacing:-.025em;
+  white-space:nowrap;
+  border:12px solid rgba(6,72,154,.08);
+  box-shadow:
+    0 0 0 92px rgba(6,72,154,.10),
+    0 22px 56px rgba(6,72,154,.18);
+  z-index:2;
+}
+
+#leistung-projektsteuerung .cockpit-core::before,
+#leistung-projektsteuerung .cockpit-core::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  background:rgba(6,72,154,.16);
+  pointer-events:none;
+  z-index:-2;
+}
+
+#leistung-projektsteuerung .cockpit-core::before{
+  width:1px;
+  height:430px;
+}
+
+#leistung-projektsteuerung .cockpit-core::after{
+  width:520px;
+  height:1px;
+}
+
+#leistung-projektsteuerung .axis{
+  position:relative;
+  width:100%;
+  min-width:0;
+  padding:18px 18px 16px;
+  background:#fff;
+  border:1px solid var(--line);
+  box-shadow:0 18px 40px rgba(8,26,54,.08);
+  z-index:3;
+  box-sizing:border-box;
+}
+
+#leistung-projektsteuerung .axis b{
+  display:block;
+  font-size:20px;
+  color:var(--ic-deep);
+  margin-bottom:6px;
+}
+
+#leistung-projektsteuerung .axis span{
+  display:block;
+  font-size:13px;
+  line-height:1.5;
+  color:var(--steel);
+}
+
+#leistung-projektsteuerung .axis-top{
+  grid-area:top;
+  text-align:center;
+  justify-self:center;
+  max-width:250px;
+}
+
+#leistung-projektsteuerung .axis-right{
+  grid-area:right;
+  align-self:center;
+}
+
+#leistung-projektsteuerung .axis-bottom{
+  grid-area:bottom;
+  text-align:center;
+  justify-self:center;
+  max-width:250px;
+}
+
+#leistung-projektsteuerung .axis-left{
+  grid-area:left;
+  align-self:center;
+}
+
+#leistung-projektsteuerung .cockpit-tools{
+  grid-area:tools;
+  width:100%;
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:10px;
+  padding-top:24px;
+  margin-top:4px;
+  border-top:1px solid var(--line);
+  position:relative;
+  z-index:4;
+}
+
+#leistung-projektsteuerung .tools-label{
+  grid-column:1/-1;
+  font-family:var(--mono);
+  font-size:10px;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--steel);
+  margin-bottom:2px;
+}
+
+#leistung-projektsteuerung .micro-chip{
+  position:static;
+  min-width:0;
+  padding:11px 10px;
+  border:1px solid rgba(6,72,154,.18);
+  background:rgba(6,72,154,.05);
+  font-family:var(--mono);
+  font-size:9.5px;
+  letter-spacing:.10em;
+  text-transform:uppercase;
+  color:var(--ic-deep);
+  text-align:center;
+  line-height:1.35;
+  overflow-wrap:normal;
+  word-break:normal;
+  hyphens:none;
+}
+
+#leistung-projektsteuerung .aho-timeline{
+  grid-template-columns:repeat(5,1fr);
+}
+
+#leistung-projektsteuerung .aho-timeline .step{
+  min-height:320px;
+  min-width:0;
+}
+
+#leistung-projektsteuerung .aho-timeline .step h3{
+  font-size:clamp(19px,1.42vw,24px);
+  line-height:1.12;
+  letter-spacing:-.015em;
+  max-width:100%;
+  overflow-wrap:normal;
+  word-break:normal;
+  hyphens:none;
+}
+
+#leistung-projektsteuerung .pm-module-grid .module h3{
+  max-width:12ch;
+}
+
+#leistung-projektsteuerung .pm-module-grid .module p{
+  max-width:40ch;
+}
+
+#leistung-projektsteuerung .pm-integration-board{
+  position:absolute;
+  inset:0 70px 70px 0;
+  background:linear-gradient(180deg,#F6F7F8 0%, #FFFFFF 100%);
+  border:1px solid var(--line);
+  padding:24px;
+}
+
+#leistung-projektsteuerung .pm-integration-board .board-grid{
+  position:relative;
+  width:100%;
+  height:100%;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  grid-template-rows:1fr 1fr;
+  gap:16px;
+}
+
+#leistung-projektsteuerung .board-box{
+  background:#fff;
+  border:1px solid var(--line);
+  display:flex;
+  align-items:flex-start;
+  justify-content:flex-end;
+  padding:22px;
+  font-family:var(--mono);
+  font-size:11px;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--steel);
+}
+
+#leistung-projektsteuerung .board-box.accent{
+  background:linear-gradient(180deg,rgba(6,72,154,.06),rgba(6,72,154,.12));
+  color:var(--ic-deep);
+}
+
+#leistung-projektsteuerung .board-center{
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  width:min(250px,72%);
+  background:var(--ic-deep);
+  color:#fff;
+  padding:28px 24px;
+  border:1px solid var(--line-dk);
+  text-align:center;
+  box-shadow:0 18px 46px rgba(6,72,154,.18);
+}
+
+#leistung-projektsteuerung .board-center .lab{
+  font-family:var(--mono);
+  font-size:11px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:#EDEFF0;
+  margin-bottom:14px;
+}
+
+#leistung-projektsteuerung .board-center p{
+  margin:0;
+  color:rgba(255,255,255,.78);
+  font-size:15px;
+  line-height:1.65;
+}
+
+#leistung-projektsteuerung .pm-leadership{
+  background:var(--cloud);
+}
+
+#leistung-projektsteuerung .pm-lead-card{
+  display:grid;
+  grid-template-columns:420px 1fr;
+  gap:1px;
+  background:var(--line);
+  border:1px solid var(--line);
+}
+
+#leistung-projektsteuerung .pm-lead-image{
+  background:linear-gradient(180deg,#e9edf2 0%, #d9e3ef 100%);
+  min-height:100%;
+  overflow:hidden;
+  position:relative;
+  padding:0;
+}
+
+#leistung-projektsteuerung .pm-lead-image img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center top;
+  display:block;
+}
+
+#leistung-projektsteuerung .pm-lead-content{
+  background:#fff;
+  padding:42px 42px 44px;
+}
+
+#leistung-projektsteuerung .pm-lead-content h3{
+  font-size:clamp(34px,4vw,56px);
+  line-height:1;
+  color:var(--ic-deep);
+  margin-bottom:10px;
+}
+
+#leistung-projektsteuerung .pm-lead-content .pm-role{
+  font-family:var(--mono);
+  font-size:11px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--steel);
+  border-bottom:1px solid var(--line);
+  padding-bottom:18px;
+  margin-bottom:22px;
+}
+
+#leistung-projektsteuerung .pm-lead-content p:not(.pm-role){
+  color:var(--steel);
+  font-size:15px;
+  line-height:1.72;
+  margin-bottom:16px;
+}
+
+#leistung-projektsteuerung .pm-facts-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  margin-top:28px;
+}
+
+#leistung-projektsteuerung .fact-card{
+  padding:20px 20px 18px;
+  border:1px solid var(--line);
+  background:linear-gradient(180deg,#fff 0%, #F6F7F8 100%);
+}
+
+#leistung-projektsteuerung .fact-card span{
+  display:block;
+  font-family:var(--mono);
+  font-size:10.5px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--ic-bright);
+  margin-bottom:12px;
+}
+
+#leistung-projektsteuerung .fact-card b{
+  display:block;
+  color:var(--ic-deep);
+  font-size:18px;
+  line-height:1.35;
+  font-weight:500;
+}
+
+@media(max-width:1160px){
+  #leistung-projektsteuerung .cockpit-layout{grid-template-columns:1fr;}
+  #leistung-projektsteuerung .cockpit-visual{max-width:860px; width:100%; margin:0 auto;}
+  #leistung-projektsteuerung .aho-timeline{grid-template-columns:repeat(3,1fr);}
+  #leistung-projektsteuerung .pm-lead-card{grid-template-columns:340px 1fr;}
+}
+
+@media(max-width:980px){
+  #leistung-projektsteuerung .cockpit-visual{
+    grid-template-columns:minmax(145px,1fr) 170px minmax(145px,1fr);
+    gap:26px 24px;
+    padding-left:28px;
+    padding-right:28px;
+  }
+  #leistung-projektsteuerung .cockpit-core{width:170px;height:170px;font-size:21px;}
+  #leistung-projektsteuerung .pm-integration-board{inset:0 36px 70px 0;}
+  #leistung-projektsteuerung .pm-lead-card{grid-template-columns:1fr;}
+  #leistung-projektsteuerung .pm-lead-image{min-height:520px;}
+}
+
+@media(max-width:860px){
+  #leistung-projektsteuerung .aho-timeline{grid-template-columns:repeat(2,1fr);}
+}
+
+@media(max-width:720px){
+  #leistung-projektsteuerung .cockpit-points article{grid-template-columns:1fr;gap:10px;}
+  #leistung-projektsteuerung .cockpit-visual{
+    min-height:auto;
+    padding:26px;
+    display:grid;
+    grid-template-columns:1fr;
+    grid-template-rows:auto;
+    grid-template-areas:
+      "core"
+      "top"
+      "right"
+      "bottom"
+      "left"
+      "tools";
+    gap:14px;
+    background:#fff;
+  }
+  #leistung-projektsteuerung .cockpit-visual::before,
+  #leistung-projektsteuerung .cockpit-visual::after{display:none;}
+  #leistung-projektsteuerung .cockpit-core,
+  #leistung-projektsteuerung .axis{
+    width:100%;
+    max-width:none;
+    height:auto;
+  }
+  #leistung-projektsteuerung .cockpit-core{
+    border-radius:0;
+    border:1px solid var(--line-dk);
+    padding:24px;
+    font-size:28px;
+    white-space:normal;
+    box-shadow:none;
+  }
+  #leistung-projektsteuerung .cockpit-core::before,
+  #leistung-projektsteuerung .cockpit-core::after{display:none;}
+  #leistung-projektsteuerung .axis-top,
+  #leistung-projektsteuerung .axis-right,
+  #leistung-projektsteuerung .axis-bottom,
+  #leistung-projektsteuerung .axis-left{
+    text-align:left;
+    justify-self:stretch;
+  }
+  #leistung-projektsteuerung .cockpit-tools{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    margin-top:8px;
+  }
+  #leistung-projektsteuerung .pm-integration-board,
+  #leistung-projektsteuerung .image-stack .main-img.pm-integration-board{
+    position:relative;
+    inset:auto;
+    min-height:420px;
+  }
+  #leistung-projektsteuerung .board-center{width:min(240px,86%);}
+}
+
+@media(max-width:560px){
+  #leistung-projektsteuerung .aho-timeline{grid-template-columns:1fr;}
+  #leistung-projektsteuerung .pm-facts-grid{grid-template-columns:1fr;}
+  #leistung-projektsteuerung .pm-lead-content{padding:30px 24px 32px;}
+  #leistung-projektsteuerung .pm-lead-image{min-height:440px;}
+}
