@@ -1,0 +1,40 @@
+# IC Immobilien Gruppe
+
+> Full-Service-Dienstleister für gewerbliche Immobilien in Deutschland. Die kanonische Website ist https://www.ic-group.de/.
+
+## Kerndaten
+- Unternehmen: IC Immobilien Gruppe / IC Immobilien Holding GmbH
+- Hauptsitz: Hanauer Landstraße 293, 60314 Frankfurt am Main, Deutschland
+- Seit 1989 im Immobilienmanagement
+- Sieben Niederlassungen: Berlin, Chemnitz, Düsseldorf, Frankfurt am Main, Hamburg, München, Stuttgart
+- Tätigkeitsgebiet: Deutschland
+
+## Leistungen
+- [Property Management](https://www.ic-group.de/leistungen/property-management/)
+- [Asset Management](https://www.ic-group.de/leistungen/asset-management/)
+- [ESG & Sustainability Advisory](https://www.ic-group.de/leistungen/esg/)
+- [Projektsteuerung](https://www.ic-group.de/leistungen/projektsteuerung/)
+- [Center Management](https://www.ic-group.de/leistungen/center-management/)
+- [Vermietung](https://www.ic-group.de/leistungen/vermietung/)
+- [Investment](https://www.ic-group.de/leistungen/investment/)
+- [Fondsmanagement](https://www.ic-group.de/leistungen/fondsmanagement/)
+- [Real Estate Advisory](https://www.ic-group.de/leistungen/real-estate-advisory/)
+
+## Niederlassungen
+- [Berlin](https://www.ic-group.de/niederlassungen/berlin/)
+- [Chemnitz](https://www.ic-group.de/niederlassungen/chemnitz/)
+- [Düsseldorf](https://www.ic-group.de/niederlassungen/duesseldorf/)
+- [Frankfurt am Main](https://www.ic-group.de/niederlassungen/frankfurt/)
+- [Hamburg](https://www.ic-group.de/niederlassungen/hamburg/)
+- [München](https://www.ic-group.de/niederlassungen/muenchen/)
+- [Stuttgart](https://www.ic-group.de/niederlassungen/stuttgart/)
+
+## Weitere zentrale Seiten
+- [Leistungsübersicht](https://www.ic-group.de/leistungen/)
+- [Niederlassungsübersicht](https://www.ic-group.de/niederlassungen/)
+- [Referenzen / Portfolio](https://www.ic-group.de/objekte/)
+- [Über IC](https://www.ic-group.de/ueber-ic/)
+- [Karriere](https://www.ic-group.de/karriere/)
+- [XML-Sitemap](https://www.ic-group.de/sitemap.xml)
+
+Die HTML-Seiten und die XML-Sitemap sind die maßgeblichen Quellen. Inhalte, Unternehmenszahlen, Ansprechpartner und Stellenangebote sollten vor Veröffentlichung auf Aktualität geprüft werden.

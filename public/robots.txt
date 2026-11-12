@@ -1,0 +1,17 @@
+# IC Immobilien Gruppe – Crawling policy
+User-agent: *
+Allow: /
+
+# ChatGPT Search
+User-agent: OAI-SearchBot
+Allow: /
+
+# OpenAI model crawler (separate from ChatGPT Search)
+User-agent: GPTBot
+Allow: /
+
+# User-requested ChatGPT page visits
+User-agent: ChatGPT-User
+Allow: /
+
+Sitemap: https://www.ic-group.de/sitemap.xml

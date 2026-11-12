@@ -1,0 +1,52 @@
+/niederlassungen/koeln /niederlassungen/ 301
+/niederlassungen/koeln/ /niederlassungen/ 301
+/standorte/koeln /niederlassungen/ 301
+# IC Immobilien Gruppe – sichere SEO-Migration für Netlify
+# WICHTIG: Keine erzwungenen (!) Pfad-Redirects für Verzeichnis-URLs verwenden.
+# Netlify normalisiert Trailing Slashes bereits selbst (Pretty URLs).
+
+# Canonical host: bestehender indexierter www-Host.
+# Dieser Host-Redirect darf erzwungen sein, da Quelle und Ziel unterschiedliche Hosts sind.
+https://ic-group.de/* https://www.ic-group.de/:splat 301!
+
+# Bestehende Website → neue Informationsarchitektur
+/startseite / 301
+/dienstleistungen /leistungen/ 301
+/dienstleistungen/property-management /leistungen/property-management/ 301
+/dienstleistungen/property-management/ansprechpartner /leistungen/property-management/ 301
+/dienstleistungen/asset-management /leistungen/asset-management/ 301
+/dienstleistungen/asset-management/ansprechpartner /leistungen/asset-management/ 301
+/dienstleistungen/projektsteuerung /leistungen/projektsteuerung/ 301
+/dienstleistungen/projektsteuerung/ansprechpartner /leistungen/projektsteuerung/ 301
+/dienstleistungen/center-management /leistungen/center-management/ 301
+/dienstleistungen/center-management/ansprechpartner /leistungen/center-management/ 301
+/dienstleistungen/vermietung /leistungen/vermietung/ 301
+/dienstleistungen/vermietung/ansprechpartner /leistungen/vermietung/ 301
+/dienstleistungen/investment /leistungen/investment/ 301
+/dienstleistungen/investment/ansprechpartner /leistungen/investment/ 301
+/dienstleistungen/fondsmanagement /leistungen/fondsmanagement/ 301
+/dienstleistungen/fondsmanagement/ansprechpartner /leistungen/fondsmanagement/ 301
+/esg /leistungen/esg/ 301
+
+/unternehmen /ueber-ic/ 301
+/unternehmen/niederlassungen /niederlassungen/ 301
+/unternehmen/standorte /niederlassungen/ 301
+/unternehmen/geschaeftsfuehrung-/-geschaeftsbereichsleitung /ueber-ic/ 301
+/unternehmen/management/vorstand /ueber-ic/ 301
+/kontakt /#kontakt 301
+
+# Kurze Alt-/Alias-URLs → neue Zielseiten
+/property-management /leistungen/property-management/ 301
+/asset-management /leistungen/asset-management/ 301
+/projektsteuerung /leistungen/projektsteuerung/ 301
+/center-management /leistungen/center-management/ 301
+/vermietung /leistungen/vermietung/ 301
+/investment /leistungen/investment/ 301
+/fondsmanagement /leistungen/fondsmanagement/ 301
+/portfolio /objekte/ 301
+/sonnenallee-office /objekte/sonnenallee-office/ 301
+/objekt-sonnenallee-office /objekte/sonnenallee-office/ 301
+/ueber-uns /ueber-ic/ 301
+
+# Keine Regeln wie /karriere -> /karriere/ anlegen:
+# Netlify Pretty URLs übernimmt diese Normalisierung automatisch.
