@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IC Immobilien Gruppe — {{LEISTUNG}}</title>
+<meta name="description" content="{{META_DESCRIPTION}}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,opsz,wght@0,10..72,400;0,10..72,500;0,10..72,600;1,10..72,400&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/main.css">
+<!-- Relaunch V7: Bewegungsschicht -->
+<script>(function(d){d.className+=" v7-js";try{if(location.pathname==="/"&&!sessionStorage.getItem("v7-intro")&&!matchMedia("(prefers-reduced-motion: reduce)").matches)d.className+=" v7-intro"}catch(e){}})(document.documentElement)</script>
+<link rel="stylesheet" href="/assets/css/relaunch-v7-motion.css?v=20261112-1">
+</head>
+<body class="route-service">
+
+<!-- ============ HEADER ============ -->
+<header id="header">
+  <div class="wrap nav">
+    <a href="/" class="brand" aria-label="IC Immobilien Gruppe">
+      <span class="mark">IC</span>
+      <span class="name"><b>IMMOBILIEN</b><span>GRUPPE</span></span>
+    </a>
+    <nav class="menu">
+      <a href="/leistungen/" class="nav-link">Leistungen</a>
+      <a href="/objekte/" class="nav-link">Portfolio</a>
+      <a href="/ueber-ic/" class="nav-link">Über uns</a>
+      <a href="/karriere/" class="nav-link">Karriere</a>
+      <a href="/#kontakt" class="nav-cta">Kontakt</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Menü öffnen" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/leistungen/">Leistungen <span class="n">01</span></a>
+  <a href="/objekte/">Portfolio <span class="n">02</span></a>
+  <a href="/ueber-ic/">Über uns <span class="n">03</span></a>
+  <a href="/karriere/">Karriere <span class="n">04</span></a>
+  <a href="/#kontakt">Kontakt <span class="n">05</span></a>
+</div>
+<!-- ============ LEISTUNGSSEITE: {{LEISTUNG}} ============ -->
+<main class="service-page" id="leistung-{{SLUG}}" aria-labelledby="serviceTitle">
+  <section class="service-hero" id="service-top">
+    <div class="hero-bg">
+      <img src="https://static.wixstatic.com/media/10af14_508413e4f5ff4f8c82e6997557e75ef8~mv2.jpg" alt="Moderne Gewerbeimmobilie" onerror="this.parentElement.style.background='linear-gradient(135deg,#06489A,#06489A)';this.remove()">
+    </div>
+    <div class="grid-overlay"></div>
+    <div class="wrap pm-hero-inner">
+      <div class="breadcrumb reveal in"><a href="/leistungen/">Leistungen</a><span>/</span><span>{{LEISTUNG}}</span></div>
+      <div class="pm-hero-layout">
+        <div class="pm-hero-copy">
+          <span class="eyebrow light reveal in">{{KICKER}}</span>
+          <h1 class="reveal in" data-d="1" id="serviceTitle">{{H1_HTML}}</h1>
+          <p class="reveal in" data-d="2">{{HERO_TEXT}}</p>
+          <div class="hero-cta reveal in" data-d="3">
+            <a href="#service-kontakt" class="btn btn-primary">Mandat besprechen <span class="arrow">→</span></a>
+            <a href="#service-umfang" class="btn btn-ghost">Leistung ansehen <span class="arrow">→</span></a>
+          </div>
+        </div>
+        <aside class="pm-hero-panel reveal in" data-d="2" aria-label="{{LEISTUNG}} Kennzahlen">
+          <div class="panel-label">Service Snapshot</div>
+          <div class="panel-grid"><div class="panel-item"><b>Plan</b><span>Businessplan</span></div><div class="panel-item"><b>KPI</b><span>Performance</span></div><div class="panel-item"><b>CAPEX</b><span>Maßnahmen</span></div><div class="panel-item"><b>ESG</b><span>Zukunftsfähigkeit</span></div></div>
+          <p class="panel-note">Strukturierte Betreuung aus einer Hand: klarer Verantwortungsrahmen, nachvollziehbare Prozesse und transparente Kommunikation.</p>
+        </aside>
+      </div>
+    </div>
+    <div class="scroll-cue">Scroll<span class="line"></span></div>
+  </section>
+
+  <section class="intro pad" id="service-umfang">
+    <div class="wrap intro-grid">
+      <div class="intro-copy reveal">
+        <span class="eyebrow">Leistungsverständnis</span>
+        <blockquote><span class="q">„</span>{{QUOTE}}<span class="q">”</span></blockquote>
+        <p class="lead">{{LEAD_TEXT}}</p>
+        <p class="small">Unser Ansatz verbindet operative Nähe mit strategischem Blick. Dadurch entstehen klare Prioritäten, belastbare Entscheidungen und ein Leistungszuschnitt, der sich am Objekt, am Mandat und an den Eigentümerzielen orientiert.</p>
+      </div>
+      <aside class="scope-card reveal" data-d="1">
+        <h3>Was wir strategisch steuern</h3>
+        <p class="small">Modular einsetzbar oder als integrierter Leistungsbaustein im Full-Service-Mandat.</p>
+        <ul class="scope-list"><li><div><b>Objektstrategie</b><span>Entwicklung von Businessplänen, Positionierung, Maßnahmenprogrammen und Exit-Szenarien.</span></div></li><li><div><b>Performance Monitoring</b><span>Überwachung von Erträgen, Kosten, Leerständen, Capex und wertrelevanten Kennzahlen.</span></div></li><li><div><b>Capex & Maßnahmen</b><span>Priorisierung, Budgetierung und Steuerung wertsteigernder Objektmaßnahmen.</span></div></li><li><div><b>Eigentümerreporting</b><span>Transparente Entscheidungsgrundlagen für Investoren, Gremien und Finanzierungspartner.</span></div></li></ul>
+      </aside>
+    </div>
+  </section>
+
+  <section class="disciplines pad">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Schwerpunkte</span>
+        <h2 class="section-title">Ein klares System für {{LEISTUNG}}.</h2>
+      </div>
+      <div class="discipline-grid"><article class="discipline reveal"><div class="mini">S</div><div class="no">01 / Strategie</div><h3>Zielbild definieren.</h3><p>Aus Eigentümerziel, Marktumfeld und Objektanalyse entsteht eine klare Strategie mit messbaren Meilensteinen.</p></article><article class="discipline reveal" data-d="1"><div class="mini">P</div><div class="no">02 / Performance</div><h3>Kennzahlen steuern.</h3><p>Ertrag, Kosten, Leerstand, Capex und Risiken werden laufend geprüft und aktiv in Maßnahmen übersetzt.</p></article><article class="discipline reveal" data-d="2"><div class="mini">W</div><div class="no">03 / Wert</div><h3>Werthebel nutzen.</h3><p>Vermietung, Technik, ESG, Positionierung und Investitionen werden auf nachhaltige Wertentwicklung ausgerichtet.</p></article></div>
+    </div>
+  </section>
+
+  <section class="system pad" id="service-system">
+    <div class="grid-overlay"></div>
+    <div class="wrap inner">
+      <div class="sec-head reveal">
+        <div class="top">
+          <div>
+            <span class="eyebrow light">Management-Prozess</span>
+            <h2 class="section-title">Vom Startpunkt bis zur laufenden Optimierung.</h2>
+          </div>
+          <p class="lead">Wir strukturieren {{LEISTUNG}} als nachvollziehbaren Prozess — mit sauberem Setup, klaren Routinen, transparentem Reporting und kontinuierlicher Weiterentwicklung.</p>
+        </div>
+      </div>
+      <div class="timeline"><article class="step reveal"><div class="kicker">Phase 01</div><h3>Analyse & Zielbild</h3><p>Prüfung von Datenraum, Verträgen, Markt, Zustand, Ertragssituation und Investorenzielen.</p></article><article class="step reveal" data-d="1"><div class="kicker">Phase 02</div><h3>Businessplan entwickeln</h3><p>Definition von Strategie, Budgets, Maßnahmen, Vermietungszielen und Reportinglogik.</p></article><article class="step reveal" data-d="2"><div class="kicker">Phase 03</div><h3>Maßnahmen steuern</h3><p>Koordination mit Property Management, Projektsteuerung, Vermietung und externen Partnern.</p></article><article class="step reveal" data-d="3"><div class="kicker">Phase 04</div><h3>Performance sichern</h3><p>Regelmäßige Überprüfung von Annahmen, Risiken, Marktveränderungen und Werthebeln.</p></article></div>
+    </div>
+  </section>
+
+  <section class="proof pad">
+    <div class="wrap proof-grid">
+      <div class="image-stack reveal">
+        <div class="main-img">
+          <img src="https://static.wixstatic.com/media/87767f_af4e9861754e49d6a281119a1c283f3c~mv2.jpg" alt="Gewerbeimmobilie im Management" onerror="this.parentElement.style.background='linear-gradient(135deg,#06489A,#F6F7F8)';this.remove()">
+        </div>
+        <div class="sub-card">
+          <div class="num">{{NUMMER}}</div>
+          <div class="lab">{{LEISTUNG}}</div>
+          <p>Ein klarer Leistungsbaustein innerhalb der IC Immobilien Gruppe — anschlussfähig an Property Management, Asset Management, Projektsteuerung und Vermietung.</p>
+        </div>
+      </div>
+      <div class="proof-copy reveal" data-d="1">
+        <span class="eyebrow">Ihr Mehrwert</span>
+        <h2 class="section-title" style="margin-top:18px">Mehr Steuerung. Weniger Reibung.</h2>
+        <p class="lead" style="margin-top:22px">{{LEISTUNG}} entfaltet Wirkung, wenn Informationen, Verantwortlichkeiten und Maßnahmen konsequent zusammengeführt werden.</p>
+        <div class="proof-list">
+          <div class="proof-item"><b>01</b><div><h4>Klare Entscheidungsgrundlagen</h4><p>Relevante Informationen werden verdichtet, priorisiert und für Eigentümer nachvollziehbar aufbereitet.</p></div></div>
+          <div class="proof-item"><b>02</b><div><h4>Verzahnte Umsetzung</h4><p>Objekt, Markt, Technik, Nutzer und Zahlen werden nicht isoliert betrachtet, sondern im Zusammenhang gesteuert.</p></div></div>
+          <div class="proof-item"><b>03</b><div><h4>Nachhaltige Wertorientierung</h4><p>Maßnahmen richten sich auf Stabilität, Zukunftsfähigkeit und langfristige Qualität der Immobilie aus.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="modules pad" id="service-module">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="top">
+          <div>
+            <span class="eyebrow">Mandatsbausteine</span>
+            <h2 class="section-title">Modular, aber aus einem Guss.</h2>
+          </div>
+          <a href="#service-kontakt" class="btn btn-outline">Leistungsumfang abstimmen <span class="arrow">→</span></a>
+        </div>
+      </div>
+      <div class="module-grid"><article class="module wide reveal"><div><span class="tag">Businessplan</span><h3>Strategie sichtbar machen.</h3><p>Objekt- und Portfoliopläne mit Ertragszielen, Investitionsbedarf, Zeitachsen und Verantwortlichkeiten.</p></div><div class="line"></div></article><article class="module small reveal" data-d="1"><div><span class="tag">Portfolio-Controlling</span><h3>Vergleichbarkeit schaffen.</h3><p>Einheitliche Kennzahlen, Statusberichte und Steuerungslogik über mehrere Standorte hinweg.</p></div><div class="line"></div></article><article class="module small reveal" data-d="2"><div><span class="tag">Capex</span><h3>Investitionen priorisieren.</h3><p>Maßnahmen werden nach Risiko, Wertbeitrag, Mietereffekt und Umsetzbarkeit bewertet.</p></div><div class="line"></div></article><article class="module mid reveal" data-d="0"><div><span class="tag">Vermietungsstrategie</span><h3>Flächen aktivieren.</h3><p>Positionierung, Zielgruppen, Mietpreislogik und Vermarktungsmaßnahmen werden verzahnt.</p></div><div class="line"></div></article><article class="module mid reveal" data-d="1"><div><span class="tag">ESG-Roadmap</span><h3>Zukunftsfähigkeit planen.</h3><p>Verbrauch, Technik, Zertifizierungen und regulatorische Anforderungen fließen in die Strategie ein.</p></div><div class="line"></div></article><article class="module mid reveal" data-d="2"><div><span class="tag">Exit Readiness</span><h3>Transaktionen vorbereiten.</h3><p>Datenqualität, Objektstory, Maßnahmenstatus und Performance werden für spätere Entscheidungen strukturiert.</p></div><div class="line"></div></article></div>
+    </div>
+  </section>
+
+  <section class="clients pad">
+    <div class="wrap clients-grid">
+      <div class="reveal">
+        <span class="eyebrow">Geeignet für</span>
+        <h2 class="section-title" style="margin-top:18px">Für Eigentümer mit professionellem Anspruch.</h2>
+        <p class="lead" style="margin-top:22px">Ob Einzelobjekt oder Portfolio: Entscheidend ist, dass Ziel, Objektlogik und Umsetzung verlässlich zusammengeführt werden.</p>
+      </div>
+      <div class="segment-list reveal" data-d="1"><article class="segment"><div class="code">Segment 01</div><div><h3>Institutionelle Investoren</h3><p>Strukturierte Steuerung und Reportingqualität für professionelle Eigentümer.</p></div></article><article class="segment"><div class="code">Segment 02</div><div><h3>Family Offices</h3><p>Unternehmerische Betreuung mit klarer Wert- und Bestandsperspektive.</p></div></article><article class="segment"><div class="code">Segment 03</div><div><h3>Einzelobjekte</h3><p>Fokussierte Strategie für Büro-, Handels-, Logistik- und Mixed-Use-Objekte.</p></div></article><article class="segment"><div class="code">Segment 04</div><div><h3>Portfolios</h3><p>Übergreifende Steuerung mit Standards, Benchmarks und Prioritäten über alle Objekte hinweg.</p></div></article></div>
+    </div>
+  </section>
+
+  <section class="cta" id="service-kontakt">
+    <div class="cta-bg"><img src="https://static.wixstatic.com/media/87767f_272c4932be7049098d0754cc2ce6b49c~mv2.jpg" alt="Immobilie im Abendlicht" onerror="this.parentElement.style.background='var(--ic-deep)';this.remove()"></div>
+    <div class="grid-overlay"></div>
+    <div class="wrap cta-inner">
+      <div class="reveal">
+        <span class="eyebrow light">Nächster Schritt</span>
+        <h2>{{LEISTUNG}} mit IC besprechen.</h2>
+        <p>Geben Sie uns einen ersten Überblick über Objekt, Portfolio oder Mandat. Wir entwickeln daraus einen passenden Leistungszuschnitt.</p>
+        <div class="hero-cta" style="margin-top:34px">
+          <a href="mailto:info@ic-gruppe.de?subject=Anfrage%20{{LEISTUNG}}" class="btn btn-primary">Anfrage senden <span class="arrow">→</span></a>
+          <a href="tel:+49691700770" class="btn btn-ghost">Direkt anrufen <span class="arrow">→</span></a>
+        </div>
+      </div>
+      <aside class="contact-box reveal" data-d="1">
+        <h3>Kontakt {{LEISTUNG}}</h3>
+        <div class="row"><b>Telefon</b><span>+49 69 17 00 77-0</span></div>
+        <div class="row"><b>E-Mail</b><span>info@ic-gruppe.de</span></div>
+        <div class="row"><b>Standort</b><span>Deutschlandweit betreut</span></div>
+        <div class="row"><b>Fokus</b><span>Gewerbliche Immobilien</span></div>
+      </aside>
+    </div>
+  </section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="ft-top">
+      <div class="ft-brand">
+        <a href="/" class="brand">
+          <span class="mark">IC</span>
+          <span class="name"><b>IMMOBILIEN</b><span>GRUPPE</span></span>
+        </a>
+        <p>Full-Service Dienstleister für gewerbliche Immobilien. Inhabergeführt, deutschlandweit, seit 1989.</p>
+      </div>
+      <div class="ft-col">
+        <h5>Leistungen</h5>
+        <a href="/leistungen/property-management/">Property Management</a>
+        <a href="/leistungen/asset-management/">Asset Management</a>
+        <a href="/leistungen/vermietung/">Vermietung</a>
+        <a href="/leistungen/investment/">Investment</a>
+      </div>
+      <div class="ft-col">
+        <h5>Unternehmen</h5>
+        <a href="/ueber-ic/">Über uns</a>
+        <a href="/karriere/">Karriere</a>
+        <a href="/objekte/">Portfolio</a>
+        <a href="/#kontakt">Kontakt</a>
+      </div>
+      <div class="ft-col">
+        <h5>Kontakt</h5>
+        <p>+49 69 17 00 77-0</p>
+        <p>info@ic-gruppe.de</p>
+        <p>Frankfurt am Main</p>
+      </div>
+    </div>
+    <div class="ft-bot">
+      <p>© 2026 IC Immobilien Gruppe</p>
+      <div class="legal">
+        <a href="/impressum/">Impressum</a>
+        <a href="/datenschutz/">Datenschutz</a>
+        <a href="/impressum/">AGB</a>
+        <a href="/barrierefreiheit/">Barrierefreiheit</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/main.js"></script>
+<script defer src="/assets/js/relaunch-v7-motion.js?v=20261112-1"></script>
+</body>
+</html>

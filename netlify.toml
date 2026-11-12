@@ -1,0 +1,9 @@
+[build]
+  # Für diese Starter-Version gibt es noch keinen Build-Schritt.
+  # Netlify veröffentlicht direkt den Ordner public/.
+  publish = "public"
+  command = ""
+
+# Netlify soll Verzeichnis-URLs selbst konsistent normalisieren.
+[build.processing.html]
+  pretty_urls = true

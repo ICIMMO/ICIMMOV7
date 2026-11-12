@@ -1,0 +1,13 @@
+{
+  "name": "ic-netlify-starter",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "npx serve public",
+    "build": "echo 'Kein Build notwendig: Netlify veröffentlicht public/'",
+    "seo:audit": "python3 scripts/seo_audit.py"
+  },
+  "devDependencies": {
+    "serve": "latest"
+  }
+}
