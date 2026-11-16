@@ -228,3 +228,6 @@
 .about-members{background:#fff}
 .about-member-row li{background:#f6f8fa}
 .about-members{border-top:1px solid var(--line)}
+
+/* GF-Feedback: Wörter nur an definierten Stellen und mit Trennstrich umbrechen */
+.about-history-heading h3,.about-figures dt{hyphens:manual;-webkit-hyphens:manual;overflow-wrap:normal}
