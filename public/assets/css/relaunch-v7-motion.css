@@ -145,27 +145,123 @@ main p{text-wrap:pretty}
 }
 .v7-light.is-on .v7-light-spot{opacity:1}
 
-/* ---------- Auftakt-Vorhang (Startseite, einmal pro Sitzung) ---------- */
+/* ---------- Auftakt (Startseite, einmal pro Sitzung) ----------
+   Ablauf, gesamt ca. 2,5 s:
+   1. Wortmarke steht mittig in einem Blueprint-Rahmen (Konstruktionslinien, Ringe, Maßangaben)
+   2. Wortmarke fährt an ihren Platz oben links im Header
+   3. die blaue Fläche löst sich Kachel für Kachel von der Mitte aus auf,
+      Navigation, Hero-Bild und Hero-Texte bauen sich dabei auf */
 .v7-intro:not(.v7-curtain-on) body::before{
   content:"";position:fixed;inset:0;z-index:9998;background:var(--v7-blue);
   animation:v7-curtain-failsafe .5s 3.2s forwards;
 }
 @keyframes v7-curtain-failsafe{to{opacity:0;visibility:hidden}}
 .v7-curtain{
-  position:fixed;inset:0;z-index:9999;display:grid;place-items:center;
+  position:fixed;inset:0;z-index:9999;overflow:hidden;
+  --w:min(340px,62vw);                         /* Breite der Wortmarke in der Mitte */
+  --pad:clamp(20px,4.2vw,40px);                /* Abstand Wortmarke – Rahmenlinien */
+  --fx:calc(var(--w) / 2 + var(--pad));
+  --fy:calc(var(--w) * .0848 + var(--pad));
+}
+.v7-curtain.is-leaving{pointer-events:none}
+
+/* Fläche aus Kacheln */
+.v7-curtain-tiles{position:absolute;inset:0;display:grid;grid-template-columns:repeat(var(--cols,6),1fr);grid-template-rows:repeat(var(--rows,4),1fr)}
+.v7-tile{margin:-.6px;background:var(--v7-blue)}
+.v7-curtain.is-leaving .v7-tile{animation:v7-tile .6s var(--v7-ease-io) var(--d,0ms) forwards}
+@keyframes v7-tile{to{opacity:0;scale:.8}}
+
+/* Licht und Raster über der Fläche */
+.v7-curtain-glow{
+  position:absolute;inset:0;transition:opacity .45s ease;
   background:
     linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px) 0 0/64px 64px,
     linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px) 0 0/64px 64px,
-    radial-gradient(120% 90% at 80% 0%,#0B5BBF 0%,var(--v7-blue) 45%,var(--v7-blue-night) 100%);
-  clip-path:inset(0 0 0 0);transition:clip-path .95s var(--v7-ease-io);
+    radial-gradient(120% 90% at 80% 0%,rgba(11,91,191,.95) 0%,rgba(6,72,154,0) 45%,rgba(4,44,97,.92) 100%);
+  animation:v7-grid 40s linear infinite;
 }
-.v7-curtain.is-leaving{clip-path:inset(0 0 100% 0)}
-.v7-curtain-logo{width:min(340px,62vw);height:auto;animation:v7-logo 1s var(--v7-ease) both}
+.v7-curtain-glow::before{
+  content:"";position:absolute;left:50%;top:50%;width:90vmax;height:90vmax;margin:-45vmax;border-radius:50%;
+  background:radial-gradient(circle,rgba(90,162,240,.34),rgba(90,162,240,0) 60%);
+  animation:v7-glow 1.2s var(--v7-ease) backwards;
+}
+@keyframes v7-glow{from{opacity:0;scale:.5}}
+
+/* Blueprint-Rahmen um die Wortmarke */
+.v7-curtain-deco{position:absolute;inset:0;transition:opacity .4s ease}
+.v7-cl{position:absolute;background:rgba(255,255,255,.24)}
+.v7-cl--t,.v7-cl--b{left:0;right:0;height:1px}
+.v7-cl--l,.v7-cl--r{top:0;bottom:0;width:1px}
+.v7-cl--t{top:calc(50% - var(--fy));transform-origin:0 50%;animation:v7-cl-x .8s var(--v7-ease-io) backwards}
+.v7-cl--b{top:calc(50% + var(--fy));transform-origin:100% 50%;animation:v7-cl-x .8s var(--v7-ease-io) .08s backwards}
+.v7-cl--l{left:calc(50% - var(--fx));transform-origin:50% 0;animation:v7-cl-y .8s var(--v7-ease-io) .04s backwards}
+.v7-cl--r{left:calc(50% + var(--fx));transform-origin:50% 100%;animation:v7-cl-y .8s var(--v7-ease-io) .12s backwards}
+@keyframes v7-cl-x{from{transform:scaleX(0)}}
+@keyframes v7-cl-y{from{transform:scaleY(0)}}
+.v7-cc{
+  position:absolute;width:15px;height:15px;margin:-7px;opacity:.9;
+  left:calc(50% + var(--sx) * var(--fx));top:calc(50% + var(--sy) * var(--fy));
+  background:linear-gradient(#fff,#fff) 50% 50%/15px 1px no-repeat,linear-gradient(#fff,#fff) 50% 50%/1px 15px no-repeat;
+  animation:v7-cc .6s var(--v7-ease) .5s backwards;
+}
+@keyframes v7-cc{from{opacity:0;rotate:-90deg;scale:.4}}
+.v7-ring{
+  position:absolute;left:50%;top:50%;border-radius:50%;
+  transition:scale .8s var(--v7-ease),opacity .5s ease;
+}
+.v7-ring--a{
+  width:calc(var(--w) * 1.7);height:calc(var(--w) * 1.7);margin:calc(var(--w) * -.85);
+  border:1px dashed rgba(255,255,255,.3);
+  background:radial-gradient(circle at 50% 0,#fff 0 4px,transparent 5px) 50% -4.5px/100% 100% no-repeat;
+  animation:v7-ring-in .9s var(--v7-ease) backwards,v7-spin 26s linear infinite;
+}
+.v7-ring--b{
+  width:calc(var(--w) * 2.5);height:calc(var(--w) * 2.5);margin:calc(var(--w) * -1.25);
+  border:1px solid rgba(255,255,255,.13);
+  background:radial-gradient(circle at 50% 100%,var(--v7-sky) 0 4px,transparent 5px) 50% calc(100% + 4.5px)/100% 100% no-repeat;
+  animation:v7-ring-in 1s var(--v7-ease) .08s backwards,v7-spin 34s linear infinite reverse;
+}
+@keyframes v7-ring-in{from{opacity:0;scale:.6}}
+.v7-curtain-tag{
+  position:absolute;font:500 10.5px/1 var(--mono,ui-monospace,monospace);letter-spacing:.2em;text-transform:uppercase;
+  white-space:nowrap;color:rgba(255,255,255,.66);animation:v7-tag .7s var(--v7-ease) .45s backwards;
+}
+.v7-curtain-tag--a{left:calc(50% - var(--fx) + 12px);top:calc(50% - var(--fy) - 22px)}
+.v7-curtain-tag--b{right:calc(50% - var(--fx) + 12px);top:calc(50% + var(--fy) + 12px)}
+@keyframes v7-tag{from{opacity:0;translate:0 6px}}
+.v7-curtain.is-leaving :is(.v7-curtain-deco,.v7-curtain-glow,.v7-curtain-line){opacity:0}
+.v7-curtain.is-leaving .v7-ring{scale:1.5;opacity:0}
+
+/* Wortmarke: erst mittig, dann Fahrt an den Header-Platz (Transform setzt das Skript) */
+.v7-curtain-logo{
+  position:absolute;left:calc(50% - var(--w) / 2);top:calc(50% - var(--w) * .0848);
+  width:var(--w);height:auto;overflow:visible;transform-origin:0 0;
+}
 .v7-curtain-logo path{fill:#fff}
-.v7-curtain.is-leaving .v7-curtain-logo{translate:0 -40px;opacity:0;transition:translate .7s var(--v7-ease-io),opacity .5s}
-@keyframes v7-logo{from{opacity:0;translate:0 18px;filter:blur(10px)}}
-.v7-curtain-line{position:absolute;left:0;bottom:0;width:100%;height:3px;background:linear-gradient(90deg,#fff,var(--v7-sky));transform-origin:0 50%;animation:v7-draw-x-from 1.1s var(--v7-ease-io) both}
+.v7-curtain-logo .logo-ic{animation:v7-logo-ic .75s var(--v7-ease) .05s backwards}
+.v7-curtain-logo .logo-word{animation:v7-logo-word .8s var(--v7-ease) .22s backwards}
+@keyframes v7-logo-ic{from{opacity:0;translate:0 4px}}
+@keyframes v7-logo-word{from{opacity:0;translate:-5px 0}}
+.v7-curtain.is-leaving .v7-curtain-logo{transition:transform .9s var(--v7-ease-io),opacity .4s ease}
+.v7-curtain.is-leaving .v7-curtain-logo.is-fading{opacity:0}
+.v7-curtain-line{position:absolute;left:0;bottom:0;width:100%;height:3px;background:linear-gradient(90deg,#fff,var(--v7-sky));transform-origin:0 50%;transition:opacity .4s ease;animation:v7-draw-x-from 1s var(--v7-ease-io) backwards}
 @keyframes v7-draw-x-from{from{transform:scaleX(0)}}
+
+/* Die Seite baut sich auf: Header-Wortmarke übernimmt, Navigation fällt ein, Hero-Bild fährt heran */
+.v7-intro-play:not(.v7-logo-landed) .ic-header .ic-brand .brand-logo{opacity:0}
+.v7-intro-play:not(.v7-ready) .ic-header :is(.ic-desktop-nav>*,.ic-mobile-toggle){opacity:0}
+.v7-intro-play.v7-ready .ic-header :is(.ic-desktop-nav>*,.ic-mobile-toggle){animation:v7-drop .8s var(--v7-ease) backwards}
+.v7-intro-play.v7-ready .ic-header .ic-desktop-nav>:nth-child(1){animation-delay:.3s}
+.v7-intro-play.v7-ready .ic-header .ic-desktop-nav>:nth-child(2){animation-delay:.37s}
+.v7-intro-play.v7-ready .ic-header .ic-desktop-nav>:nth-child(3){animation-delay:.44s}
+.v7-intro-play.v7-ready .ic-header .ic-desktop-nav>:nth-child(4){animation-delay:.51s}
+.v7-intro-play.v7-ready .ic-header .ic-desktop-nav>:nth-child(5){animation-delay:.58s}
+.v7-intro-play.v7-ready .ic-header .ic-desktop-nav>:nth-child(n+6){animation-delay:.65s}
+.v7-intro-play.v7-ready .ic-header .ic-mobile-toggle{animation-delay:.45s}
+@keyframes v7-drop{from{opacity:0;translate:0 -16px}}
+.v7-intro-play .home-page .hero-bg img{animation:v7-arrive 2s var(--v7-ease) both,v7-ken 28s ease-in-out infinite alternate}
+@keyframes v7-arrive{from{transform:scale(1.16)}to{transform:scale(1)}}
+.v7-intro-play.v7-ready .home-page .scroll-cue{animation-delay:.8s}
 
 /* ==========================================================================
    STARTSEITE
