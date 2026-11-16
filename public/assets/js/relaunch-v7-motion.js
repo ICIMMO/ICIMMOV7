@@ -398,7 +398,9 @@
   })();
 
   /* ------------------------------------------------------------------ */
-  /* 9. Auftakt: Vorhang auf der Startseite (einmal pro Sitzung)         */
+  /* 9. Auftakt auf der Startseite (einmal pro Sitzung)                  */
+  /*    Wortmarke im Blueprint-Rahmen -> fährt an ihren Header-Platz,    */
+  /*    die Fläche löst sich in Kacheln auf, die Seite baut sich auf.    */
   /* ------------------------------------------------------------------ */
   function ready() {
     root.classList.remove('v7-intro');
@@ -407,22 +409,89 @@
 
   (function intro() {
     if (!root.classList.contains('v7-intro') || reduce) { ready(); return; }
-    try { sessionStorage.setItem('v7-intro', '1'); } catch (e) { /* ohne Speicher: Vorhang bei jedem Aufruf */ }
+    try { sessionStorage.setItem('v7-intro', '1'); } catch (e) { /* ohne Speicher: Auftakt bei jedem Aufruf */ }
+
+    var HOLD = 1000;    // ms: Wortmarke steht mittig
+    var FLIGHT = 900;   // ms: Fahrt nach oben links (muss zur CSS-Transition passen)
+    var SPREAD = 380;   // ms: Versatz der Kacheln von der Mitte bis zum Rand
+
     var curtain = el('div', 'v7-curtain');
+
+    // Fläche aus Kacheln
+    var cols = Math.max(4, Math.min(9, Math.round(window.innerWidth / 190)));
+    var rows = Math.max(3, Math.min(7, Math.round(window.innerHeight / 190)));
+    var tiles = el('div', 'v7-curtain-tiles');
+    tiles.style.setProperty('--cols', cols);
+    tiles.style.setProperty('--rows', rows);
+    for (var r = 0; r < rows; r++) {
+      for (var c = 0; c < cols; c++) {
+        var tile = doc.createElement('i');
+        tile.className = 'v7-tile';
+        var dx = (c + 0.5) / cols - 0.5, dy = (r + 0.5) / rows - 0.5;
+        var dist = Math.sqrt(dx * dx + dy * dy) / 0.7072;
+        tile.style.setProperty('--d', Math.round(dist * SPREAD + Math.random() * 60) + 'ms');
+        tiles.appendChild(tile);
+      }
+    }
+    curtain.appendChild(tiles);
+    curtain.appendChild(el('div', 'v7-curtain-glow'));
+
+    // Blueprint-Rahmen
+    var deco = el('div', 'v7-curtain-deco');
+    deco.innerHTML =
+      '<span class="v7-ring v7-ring--b"></span><span class="v7-ring v7-ring--a"></span>' +
+      '<span class="v7-cl v7-cl--t"></span><span class="v7-cl v7-cl--b"></span>' +
+      '<span class="v7-cl v7-cl--l"></span><span class="v7-cl v7-cl--r"></span>' +
+      '<span class="v7-cc" style="--sx:-1;--sy:-1"></span><span class="v7-cc" style="--sx:1;--sy:-1"></span>' +
+      '<span class="v7-cc" style="--sx:-1;--sy:1"></span><span class="v7-cc" style="--sx:1;--sy:1"></span>' +
+      '<span class="v7-curtain-tag v7-curtain-tag--a">Full-Service</span>' +
+      '<span class="v7-curtain-tag v7-curtain-tag--b">seit 1989</span>';
+    curtain.appendChild(deco);
+
+    // Wortmarke
     var logo = doc.querySelector('.ic-brand svg');
+    var clone = null;
     if (logo) {
-      var clone = logo.cloneNode(true);
+      clone = logo.cloneNode(true);
       clone.removeAttribute('id');
       clone.setAttribute('class', 'v7-curtain-logo');
       curtain.appendChild(clone);
     }
     curtain.appendChild(el('span', 'v7-curtain-line'));
     doc.body.appendChild(curtain);
-    root.classList.add('v7-curtain-on');
-    window.setTimeout(function () { curtain.classList.add('is-leaving'); ready(); }, 1150);
+    root.classList.add('v7-curtain-on', 'v7-intro-play');
+
+    function land() {
+      root.classList.add('v7-logo-landed');
+      if (clone && clone.parentNode) clone.parentNode.removeChild(clone);
+    }
+
     window.setTimeout(function () {
+      // Zielposition erst jetzt messen – Schriften und Header-Layout stehen dann sicher.
+      var fly = false;
+      if (clone && logo && window.scrollY < 8) {
+        var from = clone.getBoundingClientRect();
+        var to = logo.getBoundingClientRect();
+        if (from.width > 0 && to.width > 0 && to.bottom > 0 && to.left < window.innerWidth) {
+          fly = true;
+          clone.style.transform =
+            'translate(' + (to.left - from.left).toFixed(2) + 'px,' + (to.top - from.top).toFixed(2) + 'px) ' +
+            'scale(' + (to.width / from.width).toFixed(5) + ')';
+        }
+      }
+      if (!fly && clone) clone.classList.add('is-fading');
+      curtain.classList.add('is-leaving');
+      ready();
+      window.setTimeout(land, fly ? FLIGHT : 300);
+    }, HOLD);
+
+    window.setTimeout(function () {
+      land();
       if (curtain.parentNode) curtain.parentNode.removeChild(curtain);
       root.classList.remove('v7-curtain-on');
-    }, 2100);
+    }, HOLD + SPREAD + 60 + 600 + 120);
+
+    // Aufbau-Klasse wieder entfernen, sobald alle Einblendungen durch sind
+    window.setTimeout(function () { root.classList.remove('v7-intro-play'); }, HOLD + 2600);
   })();
 })();
