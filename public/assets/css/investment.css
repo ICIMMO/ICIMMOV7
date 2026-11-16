@@ -1737,3 +1737,9 @@
   margin:30px 0 22px;font-family:var(--serif);font-size:clamp(28px,3vw,42px);
   line-height:1.16;letter-spacing:-.02em;color:#fff
 }
+
+/* Feedback D. Eidenschink 12.11.2026: vierte Kennzahl ergänzt – bei schmaler Textspalte 2 × 2 statt 4 × 1 */
+@media(max-width:1240px) and (min-width:561px){
+  .investment-page .leader-facts{grid-template-columns:1fr 1fr}
+}
+.investment-page .leader-facts strong{hyphens:manual;-webkit-hyphens:manual}

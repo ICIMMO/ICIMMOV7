@@ -164,3 +164,13 @@
 /* Ausgeblendete Sections sicher verstecken */
 .asset-page section[hidden]{display:none!important}
 @media(max-width:1160px){.asset-page .am-hub-units li:nth-child(n+4)::before{display:none}}
+
+/* Feedback D. Eidenschink 12.11.2026: Investment aus dem Operating Model entfernt – vier Einheiten */
+.asset-page .am-hub-units{grid-template-columns:repeat(4,minmax(0,1fr))}
+.asset-page .am-hub-units::before{left:calc((100% - 24px) / 8);right:calc((100% - 24px) / 8)}
+.asset-page .am-hub-units li:nth-child(n)::before{display:block}
+@media(max-width:1160px) and (min-width:821px){
+  .asset-page .am-hub-units{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .asset-page .am-hub-units::before{left:calc((100% - 24px) / 8);right:calc((100% - 24px) / 8)}
+}
+@media(max-width:820px){.asset-page .am-hub-units li:nth-child(n)::before{display:none}}
