@@ -48,6 +48,7 @@
 .ic-mega-link:is(a):hover,.ic-mega-link:is(a):focus-visible{background:#f0f5fb;padding-left:10px}
 .ic-link-index{font-size:11px;line-height:22px;font-variant-numeric:tabular-nums;letter-spacing:.04em;color:#6484a4;flex-shrink:0}
 .ic-header .ic-mega-link[href^="/niederlassungen/"] > .ic-link-index{display:none}
+.ic-header .ic-mega-link[href^="/leistungen/"] > .ic-link-index{display:none}
 .ic-link-copy{display:block;flex:1;min-width:0}
 .ic-link-title{display:block;font-weight:600;font-size:16px;line-height:1.4;color:var(--nav-ink)}
 .ic-link-desc{display:block;font-size:14px;line-height:1.5;color:#5c6c7c;margin-top:5px}
