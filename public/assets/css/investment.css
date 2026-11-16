@@ -1738,8 +1738,16 @@
   line-height:1.16;letter-spacing:-.02em;color:#fff
 }
 
-/* Feedback D. Eidenschink 12.11.2026: vierte Kennzahl ergänzt – bei schmaler Textspalte 2 × 2 statt 4 × 1 */
-@media(max-width:1240px) and (min-width:561px){
-  .investment-page .leader-facts{grid-template-columns:1fr 1fr}
-}
-.investment-page .leader-facts strong{hyphens:manual;-webkit-hyphens:manual}
+/* Feedback D. Eidenschink 12.11.2026: vier Kennzahlen bei Bernhard Wildmoser */
+.investment-page .leader-facts{grid-template-columns:repeat(4,1fr)}
+@media(max-width:1240px){.investment-page .leader-facts{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.investment-page .leader-facts{grid-template-columns:1fr}}
+
+/* Track Record: Platzhalter, bis Objektfotos freigegeben sind */
+.investment-page .inv-asset-ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;
+  background-color:#0c4a93;
+  background-image:linear-gradient(rgba(255,255,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.07) 1px,transparent 1px);
+  background-size:28px 28px;color:rgba(255,255,255,.75)}
+.investment-page .inv-asset-ph svg{width:64px;height:64px;fill:none;stroke:currentColor;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round;margin-top:-30px}
+.investment-page .inv-asset-ph span{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase}
+@media(max-width:560px){.investment-page .inv-asset-ph svg{width:44px;height:44px;margin-top:-22px}.investment-page .inv-asset-ph span{font-size:8.5px}}
